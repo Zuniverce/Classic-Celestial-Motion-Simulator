@@ -18,9 +18,27 @@
     <ClCompile Include="The Three-body Problem Simulator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CelestialBody.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Space.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SpaceVector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Definition.h">
+    <ClInclude Include="Global.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CelestialBody.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Space.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceVector.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

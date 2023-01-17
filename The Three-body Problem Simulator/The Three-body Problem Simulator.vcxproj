@@ -127,10 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CelestialBody.cpp" />
+    <ClCompile Include="Space.cpp" />
+    <ClCompile Include="SpaceVector.cpp" />
     <ClCompile Include="The Three-body Problem Simulator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Definition.h" />
+    <ClInclude Include="CelestialBody.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="Space.h" />
+    <ClInclude Include="SpaceVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
