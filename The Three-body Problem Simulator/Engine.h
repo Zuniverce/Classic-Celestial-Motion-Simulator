@@ -9,6 +9,6 @@ class Engine
 private:
 	CelestialBody star[QUANTITY];
 public:
-	void Run(int);
+	int Run(int);
 };
 

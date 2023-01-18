@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Space.h"
 #include "SpaceVector.h"
 
@@ -14,7 +13,7 @@ private:
 
 public:
 	CelestialBody();
-	CelestialBody(Space, SpaceVector); // 坐标, 速度
+	void set(double, Space, SpaceVector); // 坐标, 速度
 
 	double getMass(); // 质量
 	Space getCoordinate(); // 坐标

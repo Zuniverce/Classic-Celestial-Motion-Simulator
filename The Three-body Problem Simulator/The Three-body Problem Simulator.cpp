@@ -8,6 +8,7 @@
 int main()
 {
 	Engine instance;
-	instance.Run(1 * 60);
+	instance.Run(1);
+	system("pause");
 	return 0;
 }

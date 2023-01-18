@@ -1,5 +1,5 @@
 #include "Space.h"
-
+#include "Global.h"
 Space::Space()
 {
 	this->x = 0;
@@ -54,3 +54,19 @@ void Space::setSpace(double X, double Y, double Z)
 double Space::getX()const { return this->x; }
 double Space::getY()const { return this->y; }
 double Space::getZ()const { return this->z; }
+
+void Space::print()
+{
+	cout << "("
+		<< this->getX() << ", "
+		<< this->getY() << ", "
+		<< this->getZ() <<
+		")" << endl;
+}
+
+double Space::getDistance(Space A, Space B)
+{
+	double X = SQR(A.getX() - B.getX());
+	double Y = SQR(A.getY() - B.getY());
+	double Z = SQR(A.getZ() - B.getZ());
+}

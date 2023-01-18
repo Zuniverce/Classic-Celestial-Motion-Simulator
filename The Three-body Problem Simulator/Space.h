@@ -19,5 +19,9 @@ public:
 	double getX()const;
 	double getY()const;
 	double getZ()const;
+
+	static double getDistance(Space, Space);
+
+	void print();
 };
 

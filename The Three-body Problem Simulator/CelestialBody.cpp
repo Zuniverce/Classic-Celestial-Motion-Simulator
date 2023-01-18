@@ -8,8 +8,9 @@ CelestialBody::CelestialBody()
 	this->velocity = SpaceVector();
 }
 
-CelestialBody::CelestialBody(Space C, SpaceVector V)
+void CelestialBody::set(double M, Space C, SpaceVector V)
 {
+	this->mass = M;
 	this->coordinate = C;
 	this->velocity = V;
 }
