@@ -7,9 +7,7 @@ Space::Space()
 	this->z = 0;
 }
 
-Space::Space(double X, double Y, double Z) :x{ X }, y{ Y }, z{ Z }
-{
-}
+Space::Space(double X, double Y, double Z) :x{ X }, y{ Y }, z{ Z } {}
 
 Space& Space::operator=(const Space& other)
 {
@@ -24,7 +22,10 @@ Space& Space::operator=(const Space& other)
 
 Space Space::operator+(const Space& other)
 {
-	return Space(this->x + other.x, this->y + other.y, this->z + other.z);
+	double X = this->x + other.x;
+	double Y = this->y + other.y;
+	double Z = this->z + other.z;
+	return Space(X, Y, Z);
 }
 
 Space& Space::operator+=(const Space& other)
@@ -35,6 +36,14 @@ Space& Space::operator+=(const Space& other)
 	return *this;
 }
 
+Space Space::operator-(const Space& other)
+{
+	double X = this->x - other.x;
+	double Y = this->y - other.y;
+	double Z = this->z - other.z;
+	return Space(X, Y, Z);
+}
+
 void Space::setSpace(double X, double Y, double Z)
 {
 	this->x = X;
@@ -42,6 +51,6 @@ void Space::setSpace(double X, double Y, double Z)
 	this->z = Z;
 }
 
-double Space::getX() { return this->x; }
-double Space::getY() { return this->y; }
-double Space::getZ() { return this->z; }
+double Space::getX()const { return this->x; }
+double Space::getY()const { return this->y; }
+double Space::getZ()const { return this->z; }

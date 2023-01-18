@@ -3,9 +3,7 @@
 
 //¹¹Ôìº¯Êý
 CelestialBody::CelestialBody()
-{/*
-	Space C;
-	SpaceVector V;*/
+{
 	this->coordinate = Space();
 	this->velocity = SpaceVector();
 }
@@ -17,53 +15,27 @@ CelestialBody::CelestialBody(Space C, SpaceVector V)
 }
 
 //getPrivate
-double CelestialBody::getMass()
-{
-	return this->mass;
-}
+double CelestialBody::getMass() { return this->mass; }
 
-Space CelestialBody::getCoordinate()
-{
-	return Space(this->coordinate);
-}
+Space CelestialBody::getCoordinate() { return Space(this->coordinate); }
 
-SpaceVector CelestialBody::getForce()
-{
-	return SpaceVector(this->force);
-}
+SpaceVector CelestialBody::getForce() { return SpaceVector(this->force); }
 
-SpaceVector CelestialBody::getAcceleration()
-{
-	return SpaceVector(this->acceleration);
-}
+SpaceVector CelestialBody::getAcceleration() { return SpaceVector(this->acceleration); }
 
-SpaceVector CelestialBody::getVelocity()
-{
-	return SpaceVector(this->velocity);
-}
+SpaceVector CelestialBody::getVelocity() { return SpaceVector(this->velocity); }
 
 
 //setting
-void CelestialBody::setCoordinate(Space C)
-{
-	this->coordinate = C;
-}
+void CelestialBody::setCoordinate(Space C) { this->coordinate = C; }
 
-void CelestialBody::setForce(SpaceVector F)
-{
-	this->force = F;
-}
+void CelestialBody::setForce(SpaceVector F) { this->force = F; }
 
-void CelestialBody::setAcceleration(SpaceVector A)
-{
-	this->acceleration = A;
-}
+void CelestialBody::setAcceleration(SpaceVector A) { this->acceleration = A; }
 
-void CelestialBody::setVelocity(SpaceVector V)
-{
-	this->velocity = V;
-}
+void CelestialBody::setVelocity(SpaceVector V) { this->velocity = V; }
 
+//other
 double CelestialBody::getKineticEnergy()
 {
 	double KE = 0.5 * this->mass * SQR(this->velocity.getModulus());
