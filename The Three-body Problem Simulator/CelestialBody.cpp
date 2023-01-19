@@ -1,11 +1,20 @@
 #include "Global.h"
 #include "CelestialBody.h"
 
+
+int CelestialBody::quantity = 0;
+
 //¹¹Ôìº¯Êý
 CelestialBody::CelestialBody()
 {
 	this->coordinate = Space();
 	this->velocity = SpaceVector();
+	quantity++;
+}
+
+CelestialBody::~CelestialBody()
+{
+	quantity--;
 }
 
 void CelestialBody::set(double M, Space C, SpaceVector V)

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="CelestialBody.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Run.cpp" />
     <ClCompile Include="Space.cpp" />
     <ClCompile Include="SpaceVector.cpp" />
     <ClCompile Include="The Three-body Problem Simulator.cpp" />

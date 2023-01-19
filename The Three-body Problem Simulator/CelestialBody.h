@@ -12,7 +12,11 @@ private:
 	SpaceVector velocity; //速度
 
 public:
+	static int quantity;
+
 	CelestialBody();
+	~CelestialBody();
+
 	void set(double, Space, SpaceVector); // 坐标, 速度
 
 	double getMass(); // 质量
@@ -29,3 +33,4 @@ public:
 	double getKineticEnergy(); // 动能
 	SpaceVector getMomentum(); // 动量
 };
+

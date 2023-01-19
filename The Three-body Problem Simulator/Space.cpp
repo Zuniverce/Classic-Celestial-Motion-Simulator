@@ -69,4 +69,5 @@ double Space::getDistance(Space A, Space B)
 	double X = SQR(A.getX() - B.getX());
 	double Y = SQR(A.getY() - B.getY());
 	double Z = SQR(A.getZ() - B.getZ());
+	return sqrt(X + Y + Z);
 }

@@ -7,8 +7,13 @@
 class Engine
 {
 private:
-	CelestialBody star[QUANTITY];
+	vector<CelestialBody> star;
 public:
-	int Run(int);
+	// 引力常量
+	const static double GravitationalConstant;
+
+	// 运行模块
+	int Run(int TimeLimit);
+
 };
 
