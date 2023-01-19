@@ -1,7 +1,7 @@
-#include "Engine.h"
+ï»¿#include "Engine.h"
 #include "Global.h"
-// ÔËĞĞÄ£¿é
-int Engine::Run(int TimeLimit)
+// è¿è¡Œæ¨¡å—
+int Engine::run(int TimeLimit)
 {
 	//star.push_back(CelestialBody())
 	/*star[0].set(1, Space(1, 0, 0), SpaceVector());
@@ -33,13 +33,13 @@ int Engine::Run(int TimeLimit)
 			star[i].setCoordinate(star[i].getCoordinate() + star[i].getVelocity() * DT);
 		}
 
-		for (int i = 0; i < CelestialBody::quantity; i++) {
+		/*for (int i = 0; i < CelestialBody::quantity; i++) {
 			for (int j = i; j < CelestialBody::quantity; j++) {
-				if (Space::getDistance(star[i].getCoordinate(), star[j].getCoordinate())) {
+				if (Space::getDistance(star[i].getCoordinate(), star[j].getCoordinate())<=) {
 					return CRASH;
 				}
 			}
-		}
+		}*/
 	}
 
 	cout << endl;

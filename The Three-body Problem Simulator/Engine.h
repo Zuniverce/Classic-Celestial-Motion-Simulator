@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Global.h"
 #include "CelestialBody.h"
 #include "Space.h"
@@ -9,11 +9,14 @@ class Engine
 private:
 	vector<CelestialBody> star;
 public:
-	// ÒıÁ¦³£Á¿
+	// å¼•åŠ›å¸¸é‡
 	const static double GravitationalConstant;
 
-	// ÔËĞĞÄ£¿é
-	int Run(int TimeLimit);
+	// è¾“å…¥
+	void initialize();
+
+	// è¿è¡Œæ¨¡å—
+	int run(int TimeLimit);
 
 };
 

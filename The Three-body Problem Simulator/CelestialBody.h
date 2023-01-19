@@ -1,36 +1,38 @@
-#pragma once
+ï»¿#pragma once
 #include "Space.h"
 #include "SpaceVector.h"
 
-class CelestialBody // ÌìÌåÀà
+class CelestialBody // å¤©ä½“ç±»
 {
 private:
-	double mass; // ÖÊÁ¿
-	Space coordinate; // ×ø±ê
-	SpaceVector force; // ÊÜÁ¦
-	SpaceVector acceleration; // ¼ÓËÙ¶È
-	SpaceVector velocity; //ËÙ¶È
+	double mass; // è´¨é‡
+	Space coordinate; // åæ ‡
+	SpaceVector force; // å—åŠ›
+	SpaceVector acceleration; // åŠ é€Ÿåº¦
+	SpaceVector velocity; //é€Ÿåº¦
 
 public:
 	static int quantity;
 
 	CelestialBody();
+	CelestialBody(double, Space, SpaceVector);
 	~CelestialBody();
 
-	void set(double, Space, SpaceVector); // ×ø±ê, ËÙ¶È
+	void set(double, Space, SpaceVector); // åæ ‡, é€Ÿåº¦
 
-	double getMass(); // ÖÊÁ¿
-	Space getCoordinate(); // ×ø±ê
-	SpaceVector getForce(); // ÊÜÁ¦
-	SpaceVector getAcceleration(); // ¼ÓËÙ¶È
-	SpaceVector getVelocity(); //ËÙ¶È
+	double getMass(); // è´¨é‡
+	Space getCoordinate(); // åæ ‡
+	SpaceVector getForce(); // å—åŠ›
+	SpaceVector getAcceleration(); // åŠ é€Ÿåº¦
+	SpaceVector getVelocity(); //é€Ÿåº¦
 
-	void setCoordinate(Space); // ×ø±ê
-	void setForce(SpaceVector); // ÊÜÁ¦
-	void setAcceleration(SpaceVector); // ¼ÓËÙ¶È
-	void setVelocity(SpaceVector); //ËÙ¶È
+	void setMass(double); // è´¨é‡
+	void setCoordinate(Space); // åæ ‡
+	void setForce(SpaceVector); // å—åŠ›
+	void setAcceleration(SpaceVector); // åŠ é€Ÿåº¦
+	void setVelocity(SpaceVector); //é€Ÿåº¦
 
-	double getKineticEnergy(); // ¶¯ÄÜ
-	SpaceVector getMomentum(); // ¶¯Á¿
+	double getKineticEnergy(); // åŠ¨èƒ½
+	SpaceVector getMomentum(); // åŠ¨é‡
 };
 

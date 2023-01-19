@@ -141,9 +141,6 @@
     <ClInclude Include="Space.h" />
     <ClInclude Include="SpaceVector.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Input-1.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
