@@ -1,1 +1,2 @@
-# The Three-body Problem Simulator
+# The Three-body Problem Simulator.
+# Made by Visual Studio.
