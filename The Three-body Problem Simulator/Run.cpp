@@ -12,19 +12,18 @@ int Engine::run(int TimeLimit)
 	{
 		for (int i = 0; i < CelestialBody::quantity; i++)
 		{
-			vector<SpaceVector> R(CelestialBody::quantity - 1); // 到star[j]的距离
-			vector<SpaceVector> F(CelestialBody::quantity - 1); // 由star[j]提供的力
+			SpaceVector R; // 到star[j - 1]的距离
+			SpaceVector F; // 由star[j - 1]提供的力
 			SpaceVector resultantForce; // 合力
 
-			for (int j = 0; j < CelestialBody::quantity - 1; j++)
+			for (int j = i + 1; j % CelestialBody::quantity != i; j++)
 			{
+				R.setSpaceVector(star[j % CelestialBody::quantity].getCoordinate() - star[i].getCoordinate());
+				F.setSpaceVector(R, GravitationalConstant * (star[i].getMass() * star[j % CelestialBody::quantity].getMass() / SQR(R.getModulus())));
+				resultantForce += F;
 
-				R[j].setSpaceVector(star[(i + j + 1) % CelestialBody::quantity].getCoordinate() - star[i].getCoordinate());
-				cout << "天体" << i << "到" << j << ": " << R[j].getModulus() << endl;
-
-				F[j].setSpaceVector(R[j], GravitationalConstant * (star[i].getMass() * star[(i + j + 1) % CelestialBody::quantity].getMass() / SQR(R[j].getModulus())));
-				cout << "天体" << j << "对" << i << ": " << F[j].getModulus() << endl;
-				resultantForce += F[j];
+				cout << "天体" << i << "到" << j << "距: " << R.getModulus() << endl;
+				cout << "天体" << j << "对" << i << "力: " << F.getModulus() << endl;
 			}
 			star[i].setForce(resultantForce);
 			star[i].setAcceleration(star[i].getForce() / star[i].getMass());
