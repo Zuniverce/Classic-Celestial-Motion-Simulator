@@ -19,7 +19,8 @@ int Engine::run(int TimeLimit)
 			for (int j = i + 1; j % CelestialBody::quantity != i; j++) // 循环下标防止溢出；
 			{
 				R.setSpaceVector(star[j % CelestialBody::quantity].getCoordinate() - star[i].getCoordinate());
-				F.setSpaceVector(R, GravitationalConstant * (star[i].getMass() * star[j % CelestialBody::quantity].getMass() / SQR(R.getModulus())));
+				F.setSpaceVector(R, GravitationalConstant
+					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass() / SQR(R.getModulus())));
 				resultantForce += F; // 合力与当前受力合成
 
 				/*cout << "天体" << i << "到" << j << "距: " << R.getModulus() << endl;
@@ -31,10 +32,11 @@ int Engine::run(int TimeLimit)
 			star[i].setCoordinate(star[i].getCoordinate() + star[i].getVelocity() * DT);
 
 			//Debug
+			/*cout << "天体" << i << endl;
 			cout << star[i].getForce().getModulus() << endl;
 			cout << star[i].getAcceleration().getModulus() << endl;
 			cout << star[i].getVelocity().getModulus() << endl;
-			star[i].getCoordinate().print();
+			star[i].getCoordinate().print();*/
 		}
 
 		// 碰撞检测
