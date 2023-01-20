@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 class Space // 空间标量坐标类
 {
 protected:
