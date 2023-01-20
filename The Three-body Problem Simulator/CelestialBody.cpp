@@ -5,8 +5,17 @@
 int CelestialBody::quantity = 0;
 
 //构造函数
+CelestialBody::CelestialBody(const CelestialBody& other)
+{
+	this->mass = other.mass;
+	this->coordinate = other.coordinate;
+	this->velocity = other.velocity;
+	quantity++;
+}
+
 CelestialBody::CelestialBody()
 {
+	
 	this->coordinate = Space();
 	this->velocity = SpaceVector();
 	quantity++;

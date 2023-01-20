@@ -15,6 +15,7 @@ public:
 	static int quantity;
 
 	CelestialBody();
+	CelestialBody(const CelestialBody& other);
 	CelestialBody(double, Space, SpaceVector);
 	~CelestialBody();
 
@@ -22,7 +23,7 @@ public:
 
 	void set(double, Space, SpaceVector); // 坐标, 速度
 
-	double getMass()const; // 质量
+	double getMass ()const; // 质量
 	Space getCoordinate()const; // 坐标
 	SpaceVector getForce()const; // 受力
 	SpaceVector getAcceleration()const; // 加速度

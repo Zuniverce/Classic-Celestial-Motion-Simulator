@@ -31,8 +31,10 @@ int Engine::run(int TimeLimit)
 		// 碰撞检测
 		for (int i = 0; i < CelestialBody::quantity; i++) {
 			for (int j = i; j < CelestialBody::quantity; j++) {
-				if (Space::getDistance(star[i].getCoordinate(), star[j].getCoordinate())<=Engine::CrashJudgingDistance) {
+				if (Space::getDistance(star[i].getCoordinate(), star[j].getCoordinate())
+					<= Engine::CrashJudgingDistance) {
 					star[i] += star[j];
+					star.erase(star.begin() + j);
 				}
 			}
 		}

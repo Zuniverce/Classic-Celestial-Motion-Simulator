@@ -5,11 +5,10 @@
 #include "Engine.h"
 #include "Time.h"
 
-string FILENAME = "The Three-body Problem Simulator";
+//string FILENAME = "The Three-body Problem Simulator";
 
 int main()
 {
-
 	Engine instance;
 	instance.run(1);
 	system("pause");
