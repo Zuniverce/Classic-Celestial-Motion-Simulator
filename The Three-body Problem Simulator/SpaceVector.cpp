@@ -1,4 +1,4 @@
-#include "SpaceVector.h"
+﻿#include "SpaceVector.h"
 #include "Space.h"
 #include "Global.h"
 SpaceVector::SpaceVector()
@@ -24,9 +24,9 @@ void SpaceVector::setSpaceVector(Space other)
 
 void SpaceVector::setSpaceVector(SpaceVector S, double K)
 {
-    this->x = S.getDirection().getX();
-    this->y = S.getDirection().getY();
-    this->z = S.getDirection().getZ();
+    this->x = K * S.getDirection().getX();
+    this->y = K * S.getDirection().getY();
+    this->z = K * S.getDirection().getZ();
 }
 
 SpaceVector& SpaceVector::operator=(const Space& other)
