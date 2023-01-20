@@ -17,6 +17,7 @@ CelestialBody::CelestialBody(double M, Space C, SpaceVector V)
 	this->mass = M;
 	this->coordinate = C;
 	this->velocity = V;
+	quantity++;
 }
 
 // 析构函数
@@ -58,7 +59,7 @@ CelestialBody CelestialBody::operator+=(const CelestialBody& other)
 	SpaceVector M = this->getMomentum() + other.getMomentum();
 	this->velocity = M / (this->mass + other.mass);
 
-	// 最后在合并质量, 因为动量要用原质量
+	// 最后再合并质量, 因为动量要用原质量
 	this->mass += other.mass;
 	return *this;
 }
