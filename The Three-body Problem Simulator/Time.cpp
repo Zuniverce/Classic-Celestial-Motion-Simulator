@@ -1,5 +1,7 @@
 ﻿#include "Time.h"
 
+const double Time::DT = 1;
+
 const int Time::DAYTOHOUR = 12;
 const int Time::HOURTOMINUTE = 60;
 const int Time::MINUTETOSECOND = 60;

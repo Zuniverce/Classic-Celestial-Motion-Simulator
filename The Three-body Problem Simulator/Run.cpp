@@ -1,6 +1,6 @@
 ﻿#include "Engine.h"
 #include "Global.h"
-
+#include "Time.h"
 // 运行模块
 int Engine::run(double TimeLimit)
 {
@@ -10,7 +10,7 @@ int Engine::run(double TimeLimit)
 
 	int timePercentCounter = 0;
 
-	for (int presentTime = 0; presentTime < TimeLimit; presentTime += DT)
+	for (int presentTime = 0; presentTime < TimeLimit; presentTime += Time::DT)
 	{
 		for (int i = 0; i < CelestialBody::quantity; i++)
 		{
@@ -32,8 +32,8 @@ int Engine::run(double TimeLimit)
 			}
 			star[i].setForce(resultantForce);
 			star[i].setAcceleration(star[i].getForce() / star[i].getMass());
-			star[i].setVelocity(star[i].getVelocity() + star[i].getAcceleration() * DT);
-			star[i].setCoordinate(star[i].getCoordinate() + star[i].getVelocity() * DT);
+			star[i].setVelocity(star[i].getVelocity() + star[i].getAcceleration() * Time::DT);
+			star[i].setCoordinate(star[i].getCoordinate() + star[i].getVelocity() * Time::DT);
 
 			// Debug
 			/*cout << "天体" << i << endl;

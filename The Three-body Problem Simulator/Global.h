@@ -11,6 +11,4 @@ using namespace std;
 template<typename T>
 constexpr auto SQR(T a) { return ((a)*(a)); }
 
-constexpr double DT = 1;
-
 constexpr int ONEHUNDRED = 100;
