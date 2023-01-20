@@ -1,5 +1,5 @@
-#pragma once
-class Space // ¿Õ¼ä±êÁ¿×ø±êÀà
+ï»¿#pragma once
+class Space // ç©ºé—´æ ‡é‡åæ ‡ç±»
 {
 protected:
 	double x;

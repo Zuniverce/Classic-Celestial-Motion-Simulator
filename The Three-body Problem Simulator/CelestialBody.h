@@ -18,13 +18,15 @@ public:
 	CelestialBody(double, Space, SpaceVector);
 	~CelestialBody();
 
+	CelestialBody operator+=(const CelestialBody&);
+
 	void set(double, Space, SpaceVector); // 坐标, 速度
 
-	double getMass(); // 质量
-	Space getCoordinate(); // 坐标
-	SpaceVector getForce(); // 受力
-	SpaceVector getAcceleration(); // 加速度
-	SpaceVector getVelocity(); //速度
+	double getMass()const; // 质量
+	Space getCoordinate()const; // 坐标
+	SpaceVector getForce()const; // 受力
+	SpaceVector getAcceleration()const; // 加速度
+	SpaceVector getVelocity()const; //速度
 
 	void setMass(double); // 质量
 	void setCoordinate(Space); // 坐标
@@ -32,7 +34,6 @@ public:
 	void setAcceleration(SpaceVector); // 加速度
 	void setVelocity(SpaceVector); //速度
 
-	double getKineticEnergy(); // 动能
-	SpaceVector getMomentum(); // 动量
+	SpaceVector getMomentum()const; // 动量
 };
 

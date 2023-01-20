@@ -7,8 +7,9 @@
 
 const double Engine::GravitationalConstant = 6.67259e-11;
 
+const double Engine::CrashJudgingDistance = 0.1;
 
-void Engine::initialize()
+Engine::Engine()
 {
 	int quantity = 0;
 	while (quantity == 0) {
@@ -35,7 +36,6 @@ void Engine::initialize()
 				continue;
 			}
 		}
-
 
 		cout << "速度(x, y, z): " << endl;
 		double velocityX, velocityY, velocityZ;

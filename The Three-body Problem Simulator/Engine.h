@@ -10,10 +10,12 @@ private:
 	vector<CelestialBody> star;
 public:
 	// 引力常量
-	const static double GravitationalConstant;
+	static const double GravitationalConstant;
 
-	// 输入
-	void initialize();
+	static const double CrashJudgingDistance;
+
+	// 构造函数
+	Engine();
 
 	// 运行模块
 	int run(int TimeLimit);

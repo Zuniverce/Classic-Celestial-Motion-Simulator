@@ -1,14 +1,9 @@
 ﻿#include "Engine.h"
 #include "Global.h"
+
 // 运行模块
 int Engine::run(int TimeLimit)
 {
-	//star.push_back(CelestialBody())
-	/*star[0].set(1, Space(1, 0, 0), SpaceVector());
-	star[1].set(1, Space(0, 0, 0), SpaceVector());
-	star[2].set(1, Space(-1, 0, 0), SpaceVector());*/
-
-
 	for (int i = 0; i < CelestialBody::quantity; i++) {
 		star[i].getCoordinate().print();
 	}
@@ -33,13 +28,14 @@ int Engine::run(int TimeLimit)
 			star[i].setCoordinate(star[i].getCoordinate() + star[i].getVelocity() * DT);
 		}
 
-		/*for (int i = 0; i < CelestialBody::quantity; i++) {
+		// 碰撞检测
+		for (int i = 0; i < CelestialBody::quantity; i++) {
 			for (int j = i; j < CelestialBody::quantity; j++) {
-				if (Space::getDistance(star[i].getCoordinate(), star[j].getCoordinate())<=) {
-					return CRASH;
+				if (Space::getDistance(star[i].getCoordinate(), star[j].getCoordinate())<=Engine::CrashJudgingDistance) {
+					star[i] += star[j];
 				}
 			}
-		}*/
+		}
 	}
 
 	cout << endl;
