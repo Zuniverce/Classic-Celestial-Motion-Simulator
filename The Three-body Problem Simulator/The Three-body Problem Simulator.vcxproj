@@ -133,6 +133,7 @@
     <ClCompile Include="Space.cpp" />
     <ClCompile Include="SpaceVector.cpp" />
     <ClCompile Include="The Three-body Problem Simulator.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CelestialBody.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Space.h" />
     <ClInclude Include="SpaceVector.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="in.txt" />

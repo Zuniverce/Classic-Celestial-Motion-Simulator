@@ -18,7 +18,7 @@ public:
 	Engine();
 
 	// 运行模块
-	int run(int TimeLimit);
+	int run(double TimeLimit);
 
 };
 

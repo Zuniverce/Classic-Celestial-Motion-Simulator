@@ -3,7 +3,6 @@
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
-#include <time.h>
 #include <Windows.h>
 #include <vector>
 
@@ -12,4 +11,6 @@ using namespace std;
 template<typename T>
 constexpr auto SQR(T a) { return ((a)*(a)); }
 
-constexpr auto DT = 1;
+constexpr double DT = 1;
+
+constexpr int ONEHUNDRED = 100;

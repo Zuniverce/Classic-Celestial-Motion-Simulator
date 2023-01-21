@@ -2,25 +2,29 @@
 #include "Global.h"
 
 // 运行模块
-int Engine::run(int TimeLimit)
+int Engine::run(double TimeLimit)
 {
 	/*for (int i = 0; i < CelestialBody::quantity; i++) {
 		star[i].getCoordinate().print();
 	}*/
 
+	int timePercentCounter = 0;
+
 	for (int presentTime = 0; presentTime < TimeLimit; presentTime += DT)
 	{
 		for (int i = 0; i < CelestialBody::quantity; i++)
 		{
-			SpaceVector R; // 到star[j - 1]的距离
-			SpaceVector F; // 由star[j - 1]提供的力
+			SpaceVector R; // 到star[j]的距离
+			SpaceVector F; // 由star[j]提供的力
 			SpaceVector resultantForce; // 合力
 
 			for (int j = i + 1; j % CelestialBody::quantity != i; j++) // 循环下标防止溢出；
 			{
-				R.setSpaceVector(star[j % CelestialBody::quantity].getCoordinate() - star[i].getCoordinate());
+				R.setSpaceVector(star[j % CelestialBody::quantity].getCoordinate()
+					- star[i].getCoordinate());
 				F.setSpaceVector(R, GravitationalConstant
-					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass() / SQR(R.getModulus())));
+					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass()
+						/ SQR(R.getModulus())));
 				resultantForce += F; // 合力与当前受力合成
 
 				/*cout << "天体" << i << "到" << j << "距: " << R.getModulus() << endl;
@@ -31,7 +35,7 @@ int Engine::run(int TimeLimit)
 			star[i].setVelocity(star[i].getVelocity() + star[i].getAcceleration() * DT);
 			star[i].setCoordinate(star[i].getCoordinate() + star[i].getVelocity() * DT);
 
-			//Debug
+			// Debug
 			/*cout << "天体" << i << endl;
 			cout << star[i].getForce().getModulus() << endl;
 			cout << star[i].getAcceleration().getModulus() << endl;
@@ -46,15 +50,19 @@ int Engine::run(int TimeLimit)
 					<= Engine::CrashJudgingDistance) {
 					star[i] += star[j];
 					star.erase(star.begin() + j);
+					return 1;
 				}
 			}
 		}
+
+		if (presentTime >= timePercentCounter * TimeLimit / ONEHUNDRED) {
+			cout << timePercentCounter << "%" << endl;
+			timePercentCounter++;
+		}
+		// cout << ".";
 	}
 
-	/*cout << endl;
-	for (int i = 0; i < CelestialBody::quantity; i++) {
-		star[i].getCoordinate().print();
-	}*/
+	cout << Space::getDistance(Space(), star[1].getCoordinate()) << endl;
 	return 0;
 }
 

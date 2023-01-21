@@ -34,6 +34,7 @@ Engine::Engine()
 			if (Space::getDistance(initializer.getCoordinate(), star[j].getCoordinate())
 				<= Engine::CrashJudgingDistance) {
 				cout << "天体的初始位置不能相同." << endl;
+				// "The initial position of the celestial body cannot be the same."
 				i--;
 				continue;
 			}

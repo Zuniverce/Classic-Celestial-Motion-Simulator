@@ -10,7 +10,7 @@
 int main()
 {
 	Engine instance;
-	instance.run(1);
+	instance.run(Time::day(10));
 	system("pause");
 
 	return 0;
