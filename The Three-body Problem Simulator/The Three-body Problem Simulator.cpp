@@ -10,7 +10,7 @@
 int main()
 {
 	Engine instance;
-	instance.run(Time::day(10));
+	instance.run(Time::day(100 * 365));
 	system("pause");
 
 	return 0;

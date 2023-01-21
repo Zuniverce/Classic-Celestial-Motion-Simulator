@@ -14,13 +14,13 @@ int Time::minute(int M)
 int Time::hour(int H)
 {
     int second = H;
-    second *= minute(1);
+    second *= minute(HOURTOMINUTE);
     return second;
 }
 
 int Time::day(int D)
 {
     int second = D;
-    second *= hour(1);
+    second *= hour(DAYTOHOUR);
     return second;
 }
