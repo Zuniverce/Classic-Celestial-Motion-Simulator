@@ -74,10 +74,18 @@ void Space::printToShow()
 		"]" << ", ";
 }
 
-double Space::getDistance(Space A, Space B)
+double Space::getDistance(const Space A, const Space B)
 {
 	double X = SQR(A.getX() - B.getX());
 	double Y = SQR(A.getY() - B.getY());
 	double Z = SQR(A.getZ() - B.getZ());
 	return sqrt(X + Y + Z);
+}
+
+double Space::getSquareDistance(const Space A, const Space B)
+{
+	double X = SQR(A.getX() - B.getX());
+	double Y = SQR(A.getY() - B.getY());
+	double Z = SQR(A.getZ() - B.getZ());
+	return X + Y + Z;
 }

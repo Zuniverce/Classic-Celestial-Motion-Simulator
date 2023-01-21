@@ -22,11 +22,13 @@ void SpaceVector::setSpaceVector(Space other)
     this->z = other.getZ();
 }
 
-void SpaceVector::setSpaceVector(SpaceVector S, double K)
+void SpaceVector::setSpaceVector(const SpaceVector D, double K)
 {
-    this->x = K * S.getDirection().getX();
-    this->y = K * S.getDirection().getY();
-    this->z = K * S.getDirection().getZ();
+    SpaceVector direction;
+    direction.setSpaceVector(D.getDirection());
+    this->x = K * direction.getX();
+    this->y = K * direction.getY();
+    this->z = K * direction.getZ();
 }
 
 SpaceVector& SpaceVector::operator=(const Space& other)
@@ -35,6 +37,21 @@ SpaceVector& SpaceVector::operator=(const Space& other)
     this->y = other.getY();
     this->z = other.getZ();
     return *this;
+}
+
+SpaceVector& SpaceVector::operator=(const SpaceVector& other)
+{
+    this->x = other.getX();
+    this->y = other.getY();
+    this->z = other.getZ();
+    return *this;
+}
+
+SpaceVector::SpaceVector(const SpaceVector& other)
+{
+    this->x = other.x;
+    this->y = other.y;
+    this->z = other.z;
 }
 
 SpaceVector SpaceVector::operator/(const double K)
@@ -69,7 +86,7 @@ SpaceVector SpaceVector::operator/(const SpaceVector& other)
     return SpaceVector(X, Y, Z);
 }
 
-double SpaceVector::getModulus()
+double SpaceVector::getModulus()const
 {
     double X = SQR(this->x);
     double Y = SQR(this->y);
@@ -77,11 +94,19 @@ double SpaceVector::getModulus()
     return sqrt(X + Y + Z);
 }
 
-Space SpaceVector::getDirection()
+double SpaceVector::getSquareModulus()const
+{
+    double X = SQR(this->x);
+    double Y = SQR(this->y);
+    double Z = SQR(this->z);
+    return X + Y + Z;
+}
+
+Space SpaceVector::getDirection()const
 {
     double Modulus = this->getModulus();
-    double X = this->x / this->getModulus();
-    double Y = this->y / this->getModulus();
-    double Z = this->z / this->getModulus();
+    double X = this->x / Modulus;
+    double Y = this->y / Modulus;
+    double Z = this->z / Modulus;
     return Space(X, Y, Z);
 }

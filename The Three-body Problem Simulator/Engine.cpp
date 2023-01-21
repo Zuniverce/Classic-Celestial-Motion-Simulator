@@ -7,7 +7,7 @@
 
 const double Engine::GravitationalConstant = 6.67259e-11;
 
-const double Engine::CrashJudgingDistance = 1e-2;
+const double Engine::CrashJudgingSquareDistance = 1e-2;
 
 Engine::Engine()
 {
@@ -31,8 +31,8 @@ Engine::Engine()
 		cin >> coordinateX >> coordinateY >> coordinateZ;
 		initializer.setCoordinate(Space(coordinateX, coordinateY, coordinateZ));
 		for (int j = 0; j < i; j++) {
-			if (Space::getDistance(initializer.getCoordinate(), star[j].getCoordinate())
-				<= Engine::CrashJudgingDistance) {
+			if (Space::getSquareDistance(initializer.getCoordinate(), star[j].getCoordinate())
+				<= Engine::CrashJudgingSquareDistance) {
 				cout << "天体的初始位置不能相同." << endl;
 				// "The initial position of the celestial body cannot be the same."
 				i--;

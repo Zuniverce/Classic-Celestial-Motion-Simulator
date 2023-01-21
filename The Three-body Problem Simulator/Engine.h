@@ -12,7 +12,7 @@ public:
 	// 引力常量
 	static const double GravitationalConstant;
 
-	static const double CrashJudgingDistance;
+	static const double CrashJudgingSquareDistance;
 
 	// 构造函数
 	Engine();

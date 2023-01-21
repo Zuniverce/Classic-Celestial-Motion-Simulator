@@ -6,22 +6,22 @@ protected:
 	double x;
 	double y;
 	double z;
-
 public:
 	Space();
 	Space(double, double, double);
+	void setSpace(double, double, double);
 
 	Space& operator=(const Space& other);
 	Space operator+(const Space& other);
 	Space& operator+=(const Space& other);
 	Space operator-(const Space& other);
 
-	void setSpace(double, double, double);
 	double getX()const;
 	double getY()const;
 	double getZ()const;
 
-	static double getDistance(Space, Space);
+	static double getDistance(const Space, const Space);
+	static double getSquareDistance(const Space A, const Space B);
 
 	void print();
 	void printToShow();
