@@ -64,6 +64,16 @@ void Space::print()
 		")" << endl;
 }
 
+void Space::printToShow()
+{
+	int diveder = 1e+6;
+	cout << "["
+		<< this->getX() / diveder << ", "
+		<< this->getY() / diveder << ", "
+		<< this->getZ() / diveder <<
+		"]" << ", ";
+}
+
 double Space::getDistance(Space A, Space B)
 {
 	double X = SQR(A.getX() - B.getX());

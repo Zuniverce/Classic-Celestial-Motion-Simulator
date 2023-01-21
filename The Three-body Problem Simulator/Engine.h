@@ -20,5 +20,6 @@ public:
 	// 运行模块
 	int run(double TimeLimit);
 
+	void check(int);
 };
 

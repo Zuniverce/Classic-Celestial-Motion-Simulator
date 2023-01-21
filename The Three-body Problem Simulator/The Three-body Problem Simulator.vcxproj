@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="CelestialBody.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Global.cpp" />
     <ClCompile Include="Run.cpp" />
     <ClCompile Include="Space.cpp" />
     <ClCompile Include="SpaceVector.cpp" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="in.txt" />
+    <Text Include="out.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

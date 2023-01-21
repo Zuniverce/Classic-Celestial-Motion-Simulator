@@ -8,8 +8,8 @@ public:
 	const static int HOURTOMINUTE;
 	const static int MINUTETOSECOND;
 
-	static int minute(int);
-	static int hour(int);
-	static int day(int);
+	static int minute(int M = 1);
+	static int hour(int H = 1);
+	static int day(int D = 1);
 };
 

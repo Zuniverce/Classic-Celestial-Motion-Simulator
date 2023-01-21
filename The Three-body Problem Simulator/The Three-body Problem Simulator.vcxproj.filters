@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Interaction">
+      <UniqueIdentifier>{3f81ba90-afb2-4b83-8d96-6c254b74a389}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="The Three-body Problem Simulator.cpp">
@@ -34,6 +37,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -58,6 +64,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="in.txt" />
+    <Text Include="in.txt">
+      <Filter>Interaction</Filter>
+    </Text>
+    <Text Include="out.txt">
+      <Filter>Interaction</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -24,5 +24,6 @@ public:
 	static double getDistance(Space, Space);
 
 	void print();
+	void printToShow();
 };
 
