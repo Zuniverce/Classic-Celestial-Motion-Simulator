@@ -1,4 +1,4 @@
-#include "Space.h"
+﻿#include "Space.h"
 #include "Global.h"
 Space::Space()
 {
@@ -66,7 +66,7 @@ void Space::print()
 
 void Space::printToShow()
 {
-	int diveder = 1e+6;
+	double diveder = 1e+6;
 	cout << "["
 		<< this->getX() / diveder << ", "
 		<< this->getY() / diveder << ", "
