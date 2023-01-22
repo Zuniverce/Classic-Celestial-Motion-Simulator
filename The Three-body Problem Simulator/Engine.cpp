@@ -5,7 +5,7 @@
 #include "Space.h"
 #include "SpaceVector.h"
 
-const double Engine::GravitationalConstant = 6.67259e-11;
+const double Engine::GravitationalConstant = 6.674e-11;
 
 const double Engine::CrashJudgingSquareDistance = 1e-2;
 
