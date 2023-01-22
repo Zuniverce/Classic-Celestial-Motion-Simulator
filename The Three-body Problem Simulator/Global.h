@@ -13,6 +13,7 @@ template<typename T>
 constexpr auto SQR(T a) { return ((a)*(a)); }
 
 constexpr int ONEHUNDRED = 100;
+constexpr int ZERO = 0;
 
 extern const string FILENAME;
 extern streambuf* cinbackup;
