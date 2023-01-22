@@ -1,12 +1,7 @@
 ﻿#include "Engine.h"
-#include "Global.h"
 #include "Time.h"
-#include "CelestialBody.h"
-#include "Space.h"
-#include "SpaceVector.h"
 
 const double Engine::GravitationalConstant = 6.674e-11;
-
 const double Engine::CrashJudgingSquareDistance = 1e-2;
 
 Engine::Engine()

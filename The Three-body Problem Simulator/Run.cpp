@@ -6,7 +6,6 @@
 
 int Engine::run(double TimeLimit)
 {
-
 	ifstream fin("in.txt"); // 输入文件
 	ofstream fout("out.txt"); //输出文件
 	streambuf* cinbackup = cin.rdbuf(fin.rdbuf()); //用 rdbuf() 重新定向，返回旧缓冲区指针;

@@ -39,62 +39,68 @@ SpaceVector& SpaceVector::operator=(const SpaceVector& other)
 	return *this;
 }
 
-SpaceVector SpaceVector::operator*(const double scalarMultiplier)
+SpaceVector SpaceVector::operator*(const double scalarMultiplier)const
 {
 	return SpaceVector(
 		this->x * scalarMultiplier,
 		this->y * scalarMultiplier,
-		this->z * scalarMultiplier);
+		this->z * scalarMultiplier
+	);
 }
 
-SpaceVector SpaceVector::operator/(const double scalarDivisor)
+SpaceVector SpaceVector::operator/(const double scalarDivisor)const
 {
 	return SpaceVector(
 		this->x / scalarDivisor,
 		this->y / scalarDivisor,
-		this->z / scalarDivisor);
+		this->z / scalarDivisor
+	);
 }
 
-SpaceVector SpaceVector::operator+(const SpaceVector& vectorAddend)
+SpaceVector SpaceVector::operator+(const SpaceVector& vectorAddend)const
 {
 	return SpaceVector(
 		this->x + vectorAddend.x,
 		this->y + vectorAddend.y,
-		this->z + vectorAddend.z);
+		this->z + vectorAddend.z
+	);
 }
 
-SpaceVector SpaceVector::operator-(const SpaceVector& vectorSubtrahend)
+SpaceVector SpaceVector::operator-(const SpaceVector& vectorSubtrahend)const
 {
 	return SpaceVector(
 		this->x - vectorSubtrahend.x,
 		this->y - vectorSubtrahend.y,
-		this->z - vectorSubtrahend.z);
+		this->z - vectorSubtrahend.z
+	);
 }
 
-SpaceVector SpaceVector::operator/(const SpaceVector& vectorDivisor)
+SpaceVector SpaceVector::operator/(const SpaceVector& vectorDivisor)const
 {
 	return SpaceVector(
 		this->x - vectorDivisor.x,
 		this->y - vectorDivisor.y,
-		this->z - vectorDivisor.z);
+		this->z - vectorDivisor.z
+	);
 }
 
-double SpaceVector::getModulus() const
+double SpaceVector::getModulus(void) const
 {
 	return sqrt(
 		SQR(this->x)
 		+ SQR(this->y)
-		+ SQR(this->z));
+		+ SQR(this->z)
+	);
 }
 
-double SpaceVector::getSquareModulus() const
+double SpaceVector::getSquareModulus(void) const
 {
 	return SQR(this->x)
 		+ SQR(this->y)
 		+ SQR(this->z);
 }
 
-SpaceVector SpaceVector::getUnitVector() const
+SpaceVector SpaceVector::getUnitVector(void) const
 {
 	int modulus = this->getModulus();
 	return SpaceVector(

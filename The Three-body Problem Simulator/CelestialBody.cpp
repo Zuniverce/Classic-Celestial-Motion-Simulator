@@ -2,93 +2,61 @@
 #include "CelestialBody.h"
 
 
-int CelestialBody::quantity = 0;
+int CelestialBody::quantity = ZERO;
 
 //构造函数
-CelestialBody::CelestialBody(const CelestialBody& other)
-{
-	this->mass = other.mass;
-	this->coordinate = other.coordinate;
-	this->velocity = other.velocity;
-	quantity++;
-}
-
-CelestialBody::CelestialBody()
-{
-	
-	this->coordinate = Space();
+CelestialBody::CelestialBody(void) {
+	this->mass = ZERO;
+	this->position = SpaceVector();
 	this->velocity = SpaceVector();
 	quantity++;
 }
-
-CelestialBody::CelestialBody(double M, Space C, SpaceVector V)
-{
+CelestialBody::CelestialBody(double M, SpaceVector& P, SpaceVector& V) {
 	this->mass = M;
-	this->coordinate = C;
+	this->position = P;
 	this->velocity = V;
 	quantity++;
 }
-
 // 析构函数
-CelestialBody::~CelestialBody()
-{
+CelestialBody::~CelestialBody(void) {
 	quantity--;
 }
 
-void CelestialBody::set(double M, Space C, SpaceVector V)
-{
+//settintgs
+void CelestialBody::setMass(double M) { this->mass = M; }
+void CelestialBody::setPosition(SpaceVector& P) { this->position = P; }
+void CelestialBody::setPosition(double X, double Y, double Z) {
+	this->position=
+}
+void CelestialBody::setForce(SpaceVector& F) { this->force = F; }
+void CelestialBody::setAcceleration(SpaceVector& A) { this->acceleration = A; }
+void CelestialBody::setVelocity(SpaceVector& V) { this->velocity = V; }
+void CelestialBody::setDisplacement(SpaceVector& D) { this->velocity = D; }
+void CelestialBody::set(double M, SpaceVector& P, SpaceVector& V) {
 	this->mass = M;
-	this->coordinate = C;
+	this->position = P;
 	this->velocity = V;
 }
 
-//getPrivate
+//gettings
 double CelestialBody::getMass()const { return this->mass; }
-
-Space CelestialBody::getCoordinate()const { return Space(this->coordinate); }
-
+SpaceVector CelestialBody::getPosition()const { return SpaceVector(this->position); }
 SpaceVector CelestialBody::getForce()const { return SpaceVector(this->force); }
-
 SpaceVector CelestialBody::getAcceleration()const { return SpaceVector(this->acceleration); }
-
 SpaceVector CelestialBody::getVelocity()const { return SpaceVector(this->velocity); }
+SpaceVector CelestialBody::getDisplacement()const { return SpaceVector(this->displacement); }
+SpaceVector CelestialBody::getMomentum()const {
+	return this->velocity * this->mass;
+}
 
-CelestialBody CelestialBody::operator+=(const CelestialBody& other)
-{
+CelestialBody CelestialBody::operator+=(const CelestialBody& other) {
 	// 将位置改为两星重心
-	double cX = (other.coordinate.getX() - this->coordinate.getX()) 
+	this->position = (other.position - this->position)
 		* (other.mass / (this->mass + other.mass));
-	double cY = (other.coordinate.getY() - this->coordinate.getY())
-		* (other.mass / (this->mass + other.mass));
-	double cZ = (other.coordinate.getZ() - this->coordinate.getZ())
-		* (other.mass / (this->mass + other.mass));
-	this->coordinate = Space(cX, cY, cZ);
-
 	// 由动量球速度
-	SpaceVector M = this->getMomentum() + other.getMomentum();
-	this->velocity = M / (this->mass + other.mass);
-
+	this->velocity = (this->getMomentum() + other.getMomentum())
+		/ (this->mass + other.mass);
 	// 最后再合并质量, 因为动量要用原质量
 	this->mass += other.mass;
 	return *this;
-}
-
-//setting
-
-void CelestialBody::setMass(double M) { this->mass = M; }
-
-void CelestialBody::setCoordinate(Space C) { this->coordinate = C; }
-
-void CelestialBody::setForce(SpaceVector F) { this->force = F; }
-
-void CelestialBody::setAcceleration(SpaceVector A) { this->acceleration = A; }
-
-void CelestialBody::setVelocity(SpaceVector V) { this->velocity = V; }
-
-SpaceVector CelestialBody::getMomentum()const
-{
-	double X = this->mass * this->velocity.getX();
-	double Y = this->mass * this->velocity.getY();
-	double Z = this->mass * this->velocity.getZ();
-	return SpaceVector(X, Y, Z);
 }
