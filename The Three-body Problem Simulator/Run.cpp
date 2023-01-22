@@ -4,7 +4,7 @@
 // 运行模块
 
 
-int Engine::run(double TimeLimit)
+int Engine::run(const double& TimeLimit)
 {
 	ifstream fin("in.txt"); // 输入文件
 	ofstream fout("out.txt"); //输出文件
@@ -29,8 +29,8 @@ int Engine::run(double TimeLimit)
 
 			for (int j = i + 1; j % CelestialBody::quantity != i; j++) // 循环下标防止溢出；
 			{
-				R.setSpaceVector(star[j % CelestialBody::quantity].getCoordinate()
-					- star[i].getCoordinate());
+				R = star[j % CelestialBody::quantity].getPosition()
+					- star[i].getPosition();
 				F.setSpaceVector(R, GravitationalConstant
 					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass()
 						/ R.getSquareModulus()));
@@ -42,7 +42,7 @@ int Engine::run(double TimeLimit)
 			star[i].setForce(resultantForce);
 			star[i].setAcceleration(star[i].getForce() / star[i].getMass());
 			star[i].setVelocity(star[i].getVelocity() + star[i].getAcceleration() * Time::DT);
-			star[i].setCoordinate(star[i].getCoordinate() + star[i].getVelocity() * Time::DT);
+			star[i].setPosition(star[i].getPosition() + star[i].getPosition() * Time::DT);
 
 			// Debug
 			/*cout << "天体" << i << endl;
@@ -55,7 +55,7 @@ int Engine::run(double TimeLimit)
 		// 碰撞检测
 		for (int i = 0; i < CelestialBody::quantity; i++) {
 			for (int j = i + 1; j < CelestialBody::quantity; j++) {
-				if (Space::getSquareDistance(star[i].getCoordinate(), star[j].getCoordinate())
+				if (SpaceVector::getSquareModulus(star[i].getPosition(), star[j].getPosition())
 					<= Engine::CrashJudgingSquareDistance) {
 					cout << "天体" << i << "天体" << j << "合并." << endl;
 					star[i] += star[j];
@@ -72,7 +72,7 @@ int Engine::run(double TimeLimit)
 			cout << "\b\b\b" << tens << ones << "%";*/
 			timePercentCounter++;
 
-			star[1].getCoordinate().printToShow();
+			star[1].getPosition().print();
 			//cout << "\b\b";
 		}
 		// cout << ".";
@@ -92,7 +92,7 @@ int Engine::run(double TimeLimit)
 	return 0;
 }
 
-void Engine::check(int situation)
+void Engine::check(const int situation)
 {
 }
 

@@ -23,16 +23,13 @@ CelestialBody::~CelestialBody(void) {
 }
 
 //settintgs
-void CelestialBody::setMass(double M) { this->mass = M; }
-void CelestialBody::setPosition(SpaceVector& P) { this->position = P; }
-void CelestialBody::setPosition(double X, double Y, double Z) {
-	this->position=
-}
-void CelestialBody::setForce(SpaceVector& F) { this->force = F; }
-void CelestialBody::setAcceleration(SpaceVector& A) { this->acceleration = A; }
-void CelestialBody::setVelocity(SpaceVector& V) { this->velocity = V; }
-void CelestialBody::setDisplacement(SpaceVector& D) { this->velocity = D; }
-void CelestialBody::set(double M, SpaceVector& P, SpaceVector& V) {
+void CelestialBody::setMass(const double M) { this->mass = M; }
+void CelestialBody::setPosition(const SpaceVector& P) { this->position = P; }
+void CelestialBody::setForce(const SpaceVector& F) { this->force = F; }
+void CelestialBody::setAcceleration(const SpaceVector& A) { this->acceleration = A; }
+void CelestialBody::setVelocity(const SpaceVector& V) { this->velocity = V; }
+void CelestialBody::setDisplacement(const SpaceVector& D) { this->velocity = D; }
+void CelestialBody::set(const double M, const SpaceVector& P, const SpaceVector& V) {
 	this->mass = M;
 	this->position = P;
 	this->velocity = V;
