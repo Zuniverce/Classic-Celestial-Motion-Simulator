@@ -29,8 +29,7 @@ public:
     double getSquareModulus(void)const; // 向量的模的平方
     SpaceVector getUnitVector(void)const; // 向量对应的单位向量
 
-    static double getSquareModulus(const SpaceVector& A, const SpaceVector& B); // 向量的模
-    double getSquareModulus(void)const; // 向量的模的平方
+    static double getSquareModulus(const SpaceVector& A, const SpaceVector& B); // 向量的模的平方
 
     void print(); // 打印为(x, y, z)\n
 };

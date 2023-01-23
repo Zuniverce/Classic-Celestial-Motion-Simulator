@@ -100,7 +100,7 @@ double SpaceVector::getSquareModulus(const SpaceVector& A, const SpaceVector& B)
 }
 SpaceVector SpaceVector::getUnitVector(void) const
 {
-	int modulus = this->getModulus();
+	double modulus = this->getModulus();
 	return SpaceVector(
 		this->x / modulus,
 		this->y / modulus,

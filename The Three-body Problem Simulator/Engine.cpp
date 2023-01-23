@@ -38,7 +38,7 @@ Engine::Engine()
 		cout << "速度 x y z : " << endl;
 		double velocityX, velocityY, velocityZ;
 		cin >> velocityX >> velocityY >> velocityZ;
-		initializer.setVelocity(velocityX, velocityY, velocityZ);
+		initializer.setVelocity(SpaceVector(velocityX, velocityY, velocityZ));
 
 		star.push_back(initializer);
        	}

@@ -15,6 +15,7 @@ public:
 
 	// 构造函数
 	CelestialBody(void); // 空构造函数
+	CelestialBody(const CelestialBody& other); // 拷贝构造函数
 	CelestialBody(double M, SpaceVector& P, SpaceVector& V); // 初始化构造函数
 	~CelestialBody(void); // 构造函数
 
@@ -35,7 +36,6 @@ public:
 	void setForce(const SpaceVector& F); // 受力
 	void setAcceleration(const SpaceVector& A); // 加速度
 	void setVelocity(const SpaceVector& V); // 速度
-	void setVelocity(const double X, const double Y, const double Z); // 速度
 	void setDisplacement(const SpaceVector& D); // 位移
 	void set(const double M, const SpaceVector& P, const SpaceVector& V);
 };
