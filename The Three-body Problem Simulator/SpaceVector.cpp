@@ -11,12 +11,12 @@ SpaceVector::SpaceVector(const SpaceVector& other) {
 	this->y = other.y;
 	this->z = other.z;
 }
-SpaceVector::SpaceVector(double X, double Y, double Z) {
+SpaceVector::SpaceVector(const double& X, const double& Y, const double& Z) {
 	this->x = X;
 	this->y = Y;
 	this->z = Z;
 }
-SpaceVector& SpaceVector::setSpaceVector(const SpaceVector& origin, double modulus) {
+SpaceVector& SpaceVector::setSpaceVector(const SpaceVector& origin, const double& modulus) {
 	SpaceVector unitVector(origin.getUnitVector());
 	this->x = modulus * unitVector.x;
 	this->y = modulus * unitVector.y;
@@ -30,14 +30,14 @@ SpaceVector& SpaceVector::operator=(const SpaceVector& other) {
 	this->z = other.z;
 	return *this;
 }
-SpaceVector SpaceVector::operator*(const double scalarMultiplier)const {
+SpaceVector SpaceVector::operator*(const double& scalarMultiplier)const {
 	return SpaceVector(
 		this->x * scalarMultiplier,
 		this->y * scalarMultiplier,
 		this->z * scalarMultiplier
 	);
 }
-SpaceVector SpaceVector::operator/(const double scalarDivisor)const {
+SpaceVector SpaceVector::operator/(const double& scalarDivisor)const {
 	return SpaceVector(
 		this->x / scalarDivisor,
 		this->y / scalarDivisor,
@@ -86,7 +86,7 @@ double SpaceVector::getSquareModulus(void) const {
 		+ SQR(this->y)
 		+ SQR(this->z);
 }
-void SpaceVector::print()
+void SpaceVector::print(void)
 {
 	cout << "("
 		<< this->x << ", "

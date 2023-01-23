@@ -16,7 +16,7 @@ public:
 	// 构造函数
 	CelestialBody(void); // 空构造函数
 	CelestialBody(const CelestialBody& other); // 拷贝构造函数
-	CelestialBody(double M, SpaceVector& P, SpaceVector& V); // 初始化构造函数
+	CelestialBody(const double M, const SpaceVector& P, const SpaceVector& V); // 初始化构造函数
 	~CelestialBody(void); // 构造函数
 
 	// 运算符重载

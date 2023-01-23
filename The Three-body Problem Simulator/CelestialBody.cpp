@@ -17,7 +17,7 @@ CelestialBody::CelestialBody(const CelestialBody& other) {
 	this->velocity = other.velocity;
 	quantity++;
 }
-CelestialBody::CelestialBody(double M, SpaceVector& P, SpaceVector& V) {
+CelestialBody::CelestialBody(const double M, const SpaceVector& P, const SpaceVector& V) {
 	this->mass = M;
 	this->position = P;
 	this->velocity = V;

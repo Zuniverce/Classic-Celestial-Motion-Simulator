@@ -10,16 +10,16 @@ public:
     // 构造函数
     SpaceVector(void); // 默认构造函数
     SpaceVector(const SpaceVector& other); // 拷贝构造函数
-    SpaceVector(double X, double Y, double Z); // 初始化构造函数
+    SpaceVector(const double& X, const double& Y, const double& Z); // 初始化构造函数
 
-    SpaceVector& setSpaceVector(const SpaceVector& origin, double modulus);
+    SpaceVector& setSpaceVector(const SpaceVector& origin, const double& modulus);
     // 根据给定向量的方向和给定的模设置向量
 
     // 运算符重载
     SpaceVector& operator=(const SpaceVector& other); // 赋值运算符
 
-    SpaceVector operator*(const double scalarMultiplier)const; // 向量乘标量
-    SpaceVector operator/(const double scalarDivisor)const; // 向量除以标量
+    SpaceVector operator*(const double& scalarMultiplier)const; // 向量乘标量
+    SpaceVector operator/(const double& scalarDivisor)const; // 向量除以标量
     SpaceVector operator+(const SpaceVector& vectorAddend)const; // 向量加法
     SpaceVector operator-(const SpaceVector& vectorSubtrahend)const; // 向量减法
     SpaceVector operator/(const SpaceVector& vectorDivisor)const; // 向量除法
@@ -31,5 +31,5 @@ public:
 
     static double getSquareModulus(const SpaceVector& A, const SpaceVector& B); // 向量的模的平方
 
-    void print(); // 打印为(x, y, z)\n
+    void print(void); // 打印为(x, y, z)\n
 };
