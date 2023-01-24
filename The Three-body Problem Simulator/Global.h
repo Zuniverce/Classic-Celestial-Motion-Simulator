@@ -14,6 +14,7 @@ constexpr auto SQR(T a) { return ((a)*(a)); }
 
 constexpr int ONEHUNDRED = 100;
 constexpr int ZERO = 0;
+constexpr int ONE = 1;
 
 extern const string FILENAME;
 extern streambuf* cinbackup;
