@@ -60,7 +60,7 @@ int Engine::run(const double& TimeLimit)
 					cout << "天体" << i << "天体" << j << "合并." << endl;
 					star[i] += star[j];
 					star.erase(star.begin() + j);
-					j -= 1;
+					j--;
 					return 1;
 				}
 			}
