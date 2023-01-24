@@ -13,15 +13,15 @@ int Engine::run(const double& TimeLimit)
 
 
 	// Debug
-	/*for (int i = 0; i < CelestialBody::quantity; i++) {
+	/*for (int i = ZERO; i < CelestialBody::quantity; i++) {
 		star[i].getCoordinate().print();
 	}*/
 
-	int timePercentCounter = 0;
+	int timePercentCounter = ZERO;
 
-	for (double presentTime = 0; presentTime < TimeLimit; presentTime += Time::DT)
+	for (double presentTime = ZERO; presentTime < TimeLimit; presentTime += Time::DT)
 	{
-		for (int i = 0; i < CelestialBody::quantity; i++)
+		for (int i = ZERO; i < CelestialBody::quantity; i++)
 		{
 			SpaceVector R; // 到star[j]的距离
 			SpaceVector F; // 由star[j]提供的力
@@ -42,7 +42,7 @@ int Engine::run(const double& TimeLimit)
 			star[i].setForce(resultantForce);
 			star[i].setAcceleration(star[i].getForce() / star[i].getMass());
 			star[i].setVelocity(star[i].getVelocity() + star[i].getAcceleration() * Time::DT);
-			star[i].setPosition(star[i].getPosition() + star[i].getPosition() * Time::DT);
+			star[i].setPosition(star[i].getPosition() + star[i].getVelocity() * Time::DT);
 
 			// Debug
 			/*cout << "天体" << i << endl;
@@ -53,13 +53,14 @@ int Engine::run(const double& TimeLimit)
 		}
 
 		// 碰撞检测
-		for (int i = 0; i < CelestialBody::quantity; i++) {
+		for (int i = ZERO; i < CelestialBody::quantity; i++) {
 			for (int j = i + 1; j < CelestialBody::quantity; j++) {
 				if (SpaceVector::getSquareModulus(star[i].getPosition(), star[j].getPosition())
 					<= Engine::CrashJudgingSquareDistance) {
 					cout << "天体" << i << "天体" << j << "合并." << endl;
 					star[i] += star[j];
 					star.erase(star.begin() + j);
+					j -= 1;
 					return 1;
 				}
 			}
@@ -80,7 +81,7 @@ int Engine::run(const double& TimeLimit)
 
 	cout << endl;
 
-	/*for (int i = 0; i < CelestialBody::quantity; i++)
+	/*for (int i = ZERO; i < CelestialBody::quantity; i++)
 	{
 		cout << "天体" << i << "的位置: ";
 		star[i].getCoordinate().print();
@@ -89,7 +90,7 @@ int Engine::run(const double& TimeLimit)
 	fin.close();//随手关闭
 	fout.close();//是好习惯
 
-	return 0;
+	return ZERO;
 }
 
 void Engine::check(const int situation)

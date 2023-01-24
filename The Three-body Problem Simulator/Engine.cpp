@@ -41,5 +41,6 @@ Engine::Engine()
 		initializer.setVelocity(SpaceVector(velocityX, velocityY, velocityZ));
 
 		star.push_back(initializer);
-       	}
+	}
+	star[1].getPosition().print();
 }
