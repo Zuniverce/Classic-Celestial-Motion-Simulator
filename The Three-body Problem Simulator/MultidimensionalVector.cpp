@@ -13,7 +13,7 @@ void MultidimensionalVector::setDimension() {
 MultidimensionalVector::MultidimensionalVector(void) {
 	/*this->x = ZERO;
 	this->y = ZERO;
-	this->z = ZERO;*/
+	this->z = ZERO;*/;
 	for (int i = ZERO; i < dimension; i++) {
 		this->coordinate.push_back(ZERO);
 	}
@@ -132,7 +132,7 @@ double MultidimensionalVector::getSquareModulus(void) const {
 	/*return SQR(this->x)
 		+ SQR(this->y)
 		+ SQR(this->z);*/
-	int squareModulus = ZERO;
+	double squareModulus = ZERO;
 	for (int i = ZERO; i < dimension; i++) {
 		squareModulus += SQR(this->coordinate[i]);
 	}

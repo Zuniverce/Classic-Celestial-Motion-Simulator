@@ -7,7 +7,7 @@ private:
     vector<double>coordinate;
 public:
     static int dimension; // 维度
-    void setDimension(); // 设置维度
+    static void setDimension(); // 设置维度
 
     MultidimensionalVector(void); // 默认构造函数
     MultidimensionalVector(const MultidimensionalVector& other); // 拷贝构造函数

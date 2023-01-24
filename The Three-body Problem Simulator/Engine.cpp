@@ -6,13 +6,12 @@ const double Engine::CrashJudgingSquareDistance = 1e-2;
 
 Engine::Engine()
 {
-	int quantity = 0;
-	while (quantity == 0) {
+	int quantity = ZERO;
+	while (quantity == ZERO) {
 		cout << "天体个数: " << endl;
 		cin >> quantity;
 	}
-
-	for (int i = 0; i < quantity; i++) {
+	for (int i = ZERO; i < quantity; i++) {
 		cout << endl << "设置天体 No." << i << endl;
 		CelestialBody initializer;
 
@@ -22,10 +21,12 @@ Engine::Engine()
 		initializer.setMass(mass);
 
 		cout << "坐标 x y z : " << endl;
-		double coordinateX, coordinateY, coordinateZ;
-		cin >> coordinateX >> coordinateY >> coordinateZ;
-		initializer.setPosition(MultidimensionalVector(coordinateX, coordinateY, coordinateZ));
-		for (int j = 0; j < i; j++) {
+		vector<double>coordinate(MultidimensionalVector::dimension);
+		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
+			cin >> coordinate[i];
+		}
+		initializer.setPosition(MultidimensionalVector(coordinate));
+		for (int j = ZERO; j < i; j++) {
 			if (MultidimensionalVector::getSquareModulus(initializer.getPosition(), star[j].getPosition())
 				<= Engine::CrashJudgingSquareDistance) {
 				cout << "天体的初始位置不能相同." << endl;
@@ -36,10 +37,11 @@ Engine::Engine()
 		}
 
 		cout << "速度 x y z : " << endl;
-		double velocityX, velocityY, velocityZ;
-		cin >> velocityX >> velocityY >> velocityZ;
-		initializer.setVelocity(MultidimensionalVector(velocityX, velocityY, velocityZ));
-
+		vector<double>velocity(MultidimensionalVector::dimension);
+		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
+			cin >> velocity[i];
+		}
+		initializer.setVelocity(MultidimensionalVector(velocity));
 		star.push_back(initializer);
 	}
 	star[1].getPosition().print();

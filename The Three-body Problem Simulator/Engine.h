@@ -6,7 +6,7 @@
 class Engine
 {
 private:
-	vector<CelestialBody> star;
+	vector<CelestialBody>star;
 public:
 	static const double GravitationalConstant; // 引力常量
 	static const double CrashJudgingSquareDistance; // 碰撞界限的平方
