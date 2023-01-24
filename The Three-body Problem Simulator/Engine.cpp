@@ -24,9 +24,9 @@ Engine::Engine()
 		cout << "坐标 x y z : " << endl;
 		double coordinateX, coordinateY, coordinateZ;
 		cin >> coordinateX >> coordinateY >> coordinateZ;
-		initializer.setPosition(SpaceVector(coordinateX, coordinateY, coordinateZ));
+		initializer.setPosition(MultidimensionalVector(coordinateX, coordinateY, coordinateZ));
 		for (int j = 0; j < i; j++) {
-			if (SpaceVector::getSquareModulus(initializer.getPosition(), star[j].getPosition())
+			if (MultidimensionalVector::getSquareModulus(initializer.getPosition(), star[j].getPosition())
 				<= Engine::CrashJudgingSquareDistance) {
 				cout << "天体的初始位置不能相同." << endl;
 				// "The initial position of the celestial body cannot be the same."
@@ -38,7 +38,7 @@ Engine::Engine()
 		cout << "速度 x y z : " << endl;
 		double velocityX, velocityY, velocityZ;
 		cin >> velocityX >> velocityY >> velocityZ;
-		initializer.setVelocity(SpaceVector(velocityX, velocityY, velocityZ));
+		initializer.setVelocity(MultidimensionalVector(velocityX, velocityY, velocityZ));
 
 		star.push_back(initializer);
 	}

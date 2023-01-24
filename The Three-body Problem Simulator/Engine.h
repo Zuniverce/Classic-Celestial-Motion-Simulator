@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Global.h"
 #include "CelestialBody.h"
-#include "SpaceVector.h"
+#include "MultidimensionalVector.h"
 
 class Engine
 {

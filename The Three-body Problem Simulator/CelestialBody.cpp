@@ -7,8 +7,8 @@ int CelestialBody::quantity = ZERO;
 //构造函数
 CelestialBody::CelestialBody(void) {
 	this->mass = ZERO;
-	this->position = SpaceVector();
-	this->velocity = SpaceVector();
+	this->position = MultidimensionalVector();
+	this->velocity = MultidimensionalVector();
 	quantity++;
 }
 CelestialBody::CelestialBody(const CelestialBody& other) {
@@ -17,7 +17,7 @@ CelestialBody::CelestialBody(const CelestialBody& other) {
 	this->velocity = other.velocity;
 	quantity++;
 }
-CelestialBody::CelestialBody(const double M, const SpaceVector& P, const SpaceVector& V) {
+CelestialBody::CelestialBody(const double M, const MultidimensionalVector& P, const MultidimensionalVector& V) {
 	this->mass = M;
 	this->position = P;
 	this->velocity = V;
@@ -30,12 +30,12 @@ CelestialBody::~CelestialBody(void) {
 
 //settintgs
 void CelestialBody::setMass(const double M) { this->mass = M; }
-void CelestialBody::setPosition(const SpaceVector& P) { this->position = P; }
-void CelestialBody::setForce(const SpaceVector& F) { this->force = F; }
-void CelestialBody::setAcceleration(const SpaceVector& A) { this->acceleration = A; }
-void CelestialBody::setVelocity(const SpaceVector& V) { this->velocity = V; }
-void CelestialBody::setDisplacement(const SpaceVector& D) { this->velocity = D; }
-void CelestialBody::set(const double M, const SpaceVector& P, const SpaceVector& V) {
+void CelestialBody::setPosition(const MultidimensionalVector& P) { this->position = P; }
+void CelestialBody::setForce(const MultidimensionalVector& F) { this->force = F; }
+void CelestialBody::setAcceleration(const MultidimensionalVector& A) { this->acceleration = A; }
+void CelestialBody::setVelocity(const MultidimensionalVector& V) { this->velocity = V; }
+void CelestialBody::setDisplacement(const MultidimensionalVector& D) { this->velocity = D; }
+void CelestialBody::set(const double M, const MultidimensionalVector& P, const MultidimensionalVector& V) {
 	this->mass = M;
 	this->position = P;
 	this->velocity = V;
@@ -43,12 +43,12 @@ void CelestialBody::set(const double M, const SpaceVector& P, const SpaceVector&
 
 //gettings
 double CelestialBody::getMass()const { return this->mass; }
-SpaceVector CelestialBody::getPosition()const { return SpaceVector(this->position); }
-SpaceVector CelestialBody::getForce()const { return SpaceVector(this->force); }
-SpaceVector CelestialBody::getAcceleration()const { return SpaceVector(this->acceleration); }
-SpaceVector CelestialBody::getVelocity()const { return SpaceVector(this->velocity); }
-SpaceVector CelestialBody::getDisplacement()const { return SpaceVector(this->displacement); }
-SpaceVector CelestialBody::getMomentum()const {
+MultidimensionalVector CelestialBody::getPosition()const { return MultidimensionalVector(this->position); }
+MultidimensionalVector CelestialBody::getForce()const { return MultidimensionalVector(this->force); }
+MultidimensionalVector CelestialBody::getAcceleration()const { return MultidimensionalVector(this->acceleration); }
+MultidimensionalVector CelestialBody::getVelocity()const { return MultidimensionalVector(this->velocity); }
+MultidimensionalVector CelestialBody::getDisplacement()const { return MultidimensionalVector(this->displacement); }
+MultidimensionalVector CelestialBody::getMomentum()const {
 	return this->velocity * this->mass;
 }
 
