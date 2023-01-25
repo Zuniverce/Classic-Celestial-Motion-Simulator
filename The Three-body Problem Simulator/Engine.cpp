@@ -1,9 +1,6 @@
 ﻿#include "Engine.h"
 #include "Time.h"
 
-const double Engine::GravitationalConstant = 6.674e-11;
-const double Engine::CrashJudgingSquareDistance = 1e-2;
-
 Engine::Engine()
 {
 	int quantity = ZERO;
@@ -20,7 +17,7 @@ Engine::Engine()
 		cin >> mass;
 		initializer.setMass(mass);
 
-		cout << "坐标 x y z : " << endl;
+		cout << "坐标 (以 : " << endl;
 		vector<double>coordinate(MultidimensionalVector::dimension);
 		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
 			cin >> coordinate[i];

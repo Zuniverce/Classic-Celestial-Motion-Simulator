@@ -19,8 +19,7 @@ public:
 	CelestialBody(const double M, const MultidimensionalVector& P, const MultidimensionalVector& V); // 初始化构造函数
 	~CelestialBody(void); // 构造函数
 
-	// 运算符重载
-	CelestialBody operator+=(const CelestialBody& other);
+	CelestialBody operator+=(const CelestialBody& other); // 运算符重载
 
 	double getMass(void)const; // 质量
 	MultidimensionalVector getPosition(void)const; // 坐标
@@ -39,4 +38,3 @@ public:
 	void setDisplacement(const MultidimensionalVector& D); // 位移
 	void set(const double M, const MultidimensionalVector& P, const MultidimensionalVector& V);
 };
-
