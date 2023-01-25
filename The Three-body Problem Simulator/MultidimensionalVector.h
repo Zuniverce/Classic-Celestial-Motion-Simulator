@@ -6,7 +6,7 @@ private:
     // 坐标
     vector<double>coordinate;
 public:
-    static int dimension; // 维度
+    static inline int dimension = 0; // 维度
     static void setDimension(); // 设置维度
 
     MultidimensionalVector(void); // 默认构造函数

@@ -1,7 +1,7 @@
 ﻿#include "MultidimensionalVector.h"
 #include "Global.h"
 
-int MultidimensionalVector::dimension = ZERO;
+//int MultidimensionalVector::dimension = ZERO;
 
 void MultidimensionalVector::setDimension() {
 	while (dimension <= ZERO) {
