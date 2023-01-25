@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "MultidimensionalVector.h"
-
 class CelestialBody // 天体类
 {
 private:
@@ -11,8 +10,7 @@ private:
 	MultidimensionalVector velocity; //速度
 	MultidimensionalVector displacement; // 位移
 public:
-	static inline int quantity = ZERO;
-
+	static inline int quantity = ZERO; // 天体总数
 	// 构造函数
 	CelestialBody(void); // 空构造函数
 	CelestialBody(const CelestialBody& other); // 拷贝构造函数
@@ -26,8 +24,6 @@ public:
 	MultidimensionalVector getForce(void)const; // 受力
 	MultidimensionalVector getAcceleration(void)const; // 加速度
 	MultidimensionalVector getVelocity(void)const; //速度
-
-	MultidimensionalVector getDisplacement(void)const; // 位移
 	MultidimensionalVector getMomentum(void)const; // 动量
 
 	void setMass(const double M); // 质量

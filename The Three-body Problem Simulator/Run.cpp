@@ -12,7 +12,6 @@ int Engine::run(const double& TimeLimit)
 			MultidimensionalVector R; // 到star[j]的距离
 			MultidimensionalVector F; // 由star[j]提供的力
 			MultidimensionalVector resultantForce; // 合力
-
 			for (int j = i + ONE; j % CelestialBody::quantity != i; j++) // 循环下标防止溢出；
 			{
 				R = star[j % CelestialBody::quantity].getPosition()

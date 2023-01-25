@@ -23,7 +23,6 @@ CelestialBody::CelestialBody(const double M, const MultidimensionalVector& P, co
 CelestialBody::~CelestialBody(void) {
 	quantity--;
 }
-
 //settintgs
 void CelestialBody::setMass(const double M) { this->mass = M; }
 void CelestialBody::setPosition(const MultidimensionalVector& P) { this->position = P; }
@@ -42,7 +41,6 @@ MultidimensionalVector CelestialBody::getPosition()const { return Multidimension
 MultidimensionalVector CelestialBody::getForce()const { return MultidimensionalVector(this->force); }
 MultidimensionalVector CelestialBody::getAcceleration()const { return MultidimensionalVector(this->acceleration); }
 MultidimensionalVector CelestialBody::getVelocity()const { return MultidimensionalVector(this->velocity); }
-MultidimensionalVector CelestialBody::getDisplacement()const { return MultidimensionalVector(this->displacement); }
 MultidimensionalVector CelestialBody::getMomentum()const {
 	return this->velocity * this->mass;
 }
