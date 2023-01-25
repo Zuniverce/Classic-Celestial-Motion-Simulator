@@ -9,6 +9,7 @@ Engine::Engine()
 		cin >> quantity;
 	}
 	for (int i = ZERO; i < quantity; i++) {
+	again:
 		cout << endl << "设置天体 No." << i << endl;
 		CelestialBody initializer;
 
@@ -29,7 +30,7 @@ Engine::Engine()
 				cout << "天体的初始位置不能相同." << endl;
 				// "The initial position of the celestial body cannot be the same."
 				i--;
-				continue;
+				goto again;
 			}
 		}
 

@@ -11,7 +11,7 @@ int main()
 {
 	MultidimensionalVector::setDimension();
 	Engine instance;
-	instance.check(instance.run(Time::day(1 * 365)));
+	instance.check(instance.run(Time::day(30)));
 	system("pause");
 
 	return 0;

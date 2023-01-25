@@ -11,7 +11,8 @@ public:
 
     MultidimensionalVector(void); // 默认构造函数
     MultidimensionalVector(const MultidimensionalVector& other); // 拷贝构造函数
-    MultidimensionalVector(const vector<double>& origin); // 初始化构造函数
+    MultidimensionalVector(const vector<double>&origin); // 初始化构造函数
+
     MultidimensionalVector& setSpaceVector(const MultidimensionalVector& origin, const double& modulus); // 根据给定向量的方向和给定的模设置向量
     
     MultidimensionalVector& operator=(const MultidimensionalVector& other); // 赋值运算符

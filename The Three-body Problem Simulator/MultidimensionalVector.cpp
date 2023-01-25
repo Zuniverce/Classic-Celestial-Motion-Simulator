@@ -26,7 +26,7 @@ MultidimensionalVector::MultidimensionalVector(const MultidimensionalVector& oth
 		this->coordinate.push_back(other.coordinate[i]);
 	}
 }
-MultidimensionalVector::MultidimensionalVector(const vector<double>& origin) {
+MultidimensionalVector::MultidimensionalVector(const vector<double>&origin) {
 	/*this->x = X;
 	this->y = Y;
 	this->z = Z;*/
@@ -35,12 +35,12 @@ MultidimensionalVector::MultidimensionalVector(const vector<double>& origin) {
 	}
 }
 MultidimensionalVector& MultidimensionalVector::setSpaceVector(const MultidimensionalVector& origin, const double& modulus) {
-	MultidimensionalVector unitVector(origin.getUnitVector());/*
-	this->x = modulus * unitVector.x;
+	MultidimensionalVector unitVector(origin.getUnitVector());
+	/*this->x = modulus * unitVector.x;
 	this->y = modulus * unitVector.y;
 	this->z = modulus * unitVector.z;*/
 	for (int i = ZERO; i < dimension; i++) {
-		this->coordinate.push_back(modulus * unitVector.coordinate[i]);
+		this->coordinate[i] = (modulus * unitVector.coordinate[i]);
 	}
 	return *this;
 }
@@ -50,7 +50,7 @@ MultidimensionalVector& MultidimensionalVector::operator=(const Multidimensional
 	this->y = other.y;
 	this->z = other.z;*/
 	for (int i = ZERO; i < dimension; i++) {
-		this->coordinate.push_back(other.coordinate[i]);
+		this->coordinate[i] = other.coordinate[i];
 	}
 	return *this;
 }
@@ -148,7 +148,7 @@ void MultidimensionalVector::print(void)
 	cout << "(";
 	cout << this->coordinate[ZERO];
 	for (int i = ONE; i < dimension; i++) {
-		cout << this->coordinate[i] << ", ";
+		cout << ", " << this->coordinate[i];
 	}
 	cout << ")" << endl;
 }
