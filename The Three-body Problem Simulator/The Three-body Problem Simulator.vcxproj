@@ -104,6 +104,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +122,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,7 +137,7 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="Run.cpp" />
-    <ClCompile Include="SpaceVector.cpp" />
+    <ClCompile Include="MultidimensionalVector.cpp" />
     <ClCompile Include="The Three-body Problem Simulator.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
@@ -139,7 +145,7 @@
     <ClInclude Include="CelestialBody.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Engine.h" />
-    <ClInclude Include="SpaceVector.h" />
+    <ClInclude Include="MultidimensionalVector.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
