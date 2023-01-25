@@ -1,28 +1,14 @@
 ﻿#include "Time.h"
-
-const double Time::DT = 1;
-
-const int Time::DAYTOHOUR = 12;
-const int Time::HOURTOMINUTE = 60;
-const int Time::MINUTETOSECOND = 60;
-
-int Time::minute(int M)
-{
-    int second = M;
-    second *= MINUTETOSECOND;
-    return second;
+double Time::minute(double M) {
+    return M * MINUTETOSECOND;
 }
-
-int Time::hour(int H)
-{
-    int second = H;
-    second *= minute(HOURTOMINUTE);
-    return second;
+double Time::hour(double H) {
+    return H * minute(HOURTOMINUTE);
 }
-
-int Time::day(int D)
-{
-    int second = D;
-    second *= hour(DAYTOHOUR);
-    return second;
+double Time::day(double D) {
+    return D * hour(DAYTOHOUR);
+}
+void Time::setShowInterval() {
+    cout << "输出时间间隔(s)" << endl;
+    cin >> showInterval;
 }

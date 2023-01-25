@@ -1,9 +1,5 @@
 ﻿#include "Global.h"
 #include "CelestialBody.h"
-
-
-int CelestialBody::quantity = ZERO;
-
 //构造函数
 CelestialBody::CelestialBody(void) {
 	this->mass = ZERO;
@@ -40,7 +36,6 @@ void CelestialBody::set(const double M, const MultidimensionalVector& P, const M
 	this->position = P;
 	this->velocity = V;
 }
-
 //gettings
 double CelestialBody::getMass()const { return this->mass; }
 MultidimensionalVector CelestialBody::getPosition()const { return MultidimensionalVector(this->position); }
@@ -51,7 +46,6 @@ MultidimensionalVector CelestialBody::getDisplacement()const { return Multidimen
 MultidimensionalVector CelestialBody::getMomentum()const {
 	return this->velocity * this->mass;
 }
-
 CelestialBody CelestialBody::operator+=(const CelestialBody& other) {
 	// 将位置改为两星重心
 	this->position = (other.position - this->position)

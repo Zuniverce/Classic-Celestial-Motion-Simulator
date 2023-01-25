@@ -11,7 +11,7 @@ private:
 	MultidimensionalVector velocity; //速度
 	MultidimensionalVector displacement; // 位移
 public:
-	static int quantity;
+	static inline int quantity = ZERO;
 
 	// 构造函数
 	CelestialBody(void); // 空构造函数

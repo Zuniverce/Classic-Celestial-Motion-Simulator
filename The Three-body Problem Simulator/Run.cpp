@@ -1,15 +1,8 @@
 ﻿#include "Engine.h"
 #include "Global.h"
 #include "Time.h"
-// 运行模块
-
-
 int Engine::run(const double& TimeLimit)
 {
-	ifstream fin("in.txt"); // 输入文件
-	ofstream fout("out.txt"); //输出文件
-	streambuf* cinbackup = cin.rdbuf(fin.rdbuf()); //用 rdbuf() 重新定向，返回旧缓冲区指针
-	streambuf* coutbackup = cout.rdbuf(fout.rdbuf()); //用 rdbuf() 重新定向，返回旧缓冲区指针
 
 	int timePercentCounter = ZERO;
 	for (double presentTime = ZERO; presentTime < TimeLimit; presentTime += Time::DT)
@@ -28,21 +21,13 @@ int Engine::run(const double& TimeLimit)
 					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass()
 						/ R.getSquareModulus()));
 				resultantForce += F; // 合力与当前受力合成
-				/*cout << "天体" << i << "到" << j << "距: " << R.getModulus() << endl;
-				cout << "天体" << j << "对" << i << "力: " << F.getModulus() << endl;*/
 			}
 			star[i].setForce(resultantForce);
 			star[i].setAcceleration(star[i].getForce() / star[i].getMass());
 			star[i].setVelocity(star[i].getVelocity() + star[i].getAcceleration() * Time::DT);
 			star[i].setPosition(star[i].getPosition() + star[i].getVelocity() * Time::DT);
-			/*// Debug
-			cout << "天体" << i << endl;
-			cout << star[i].getForce().getModulus() << endl;
-			cout << star[i].getAcceleration().getModulus() << endl;
-			cout << star[i].getVelocity().getModulus() << endl;
-			star[i].getCoordinate().print();*/
 		}
-				// 碰撞检测
+		// 碰撞检测
 		for (int i = ZERO; i < CelestialBody::quantity; i++) {
 			for (int j = i + 1; j < CelestialBody::quantity; j++) {
 				if (MultidimensionalVector::getSquareModulus(star[i].getPosition(), star[j].getPosition())
@@ -51,32 +36,24 @@ int Engine::run(const double& TimeLimit)
 					star[i] += star[j];
 					star.erase(star.begin() + j);
 					j--;
-					return 1;
 				}
 			}
-		}		
+		}
+		if (int(presentTime) % int(Time::showInterval) <= ONE) {
+			star[ZERO].getPosition().print();
+			for (int i = ONE; i < CelestialBody::quantity; i++) {
+				fout << ", ";
+				star[i].getPosition().print();
+			}
+			fout << endl;
+		}
 		if (presentTime >= timePercentCounter * TimeLimit / ONEHUNDRED) {
-			/*int tens = timePercentCounter / 10;
+			int tens = timePercentCounter / 10;
 			int ones = timePercentCounter - tens * 10;
-			cout << "\b\b\b" << tens << ones << "%";*/
+			cout << "\b\b\b" << tens << ones << "%";
 			timePercentCounter++;
-
-			star[1].getPosition().print();
 		}
 	}
-	/*cout << endl;
-	for (int i = ZERO; i < CelestialBody::quantity; i++)
-	{
-		cout << "天体" << i << "的位置: ";
-		star[i].getCoordinate().print();
-	}*/
-	fin.close();//随手关闭
-	fout.close();//是好习惯
-
+	cout << "\b\b\b" << "done." << endl;
 	return ZERO;
 }
-
-void Engine::check(const int situation)
-{
-}
-
