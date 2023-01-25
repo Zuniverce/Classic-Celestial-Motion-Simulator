@@ -24,12 +24,6 @@
     <ClCompile Include="CelestialBody.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Space.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SpaceVector.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Engine.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -42,6 +36,9 @@
     <ClCompile Include="Global.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MultidimensionalVector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Global.h">
@@ -50,16 +47,13 @@
     <ClInclude Include="CelestialBody.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Space.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SpaceVector.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Engine.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MultidimensionalVector.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
