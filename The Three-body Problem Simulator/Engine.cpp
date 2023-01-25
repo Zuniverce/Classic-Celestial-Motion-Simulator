@@ -17,7 +17,7 @@ Engine::Engine()
 		cin >> mass;
 		initializer.setMass(mass);
 
-		cout << "坐标 (以 : " << endl;
+		cout << "坐标 (以空格分隔) : " << endl;
 		vector<double>coordinate(MultidimensionalVector::dimension);
 		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
 			cin >> coordinate[i];
@@ -33,7 +33,7 @@ Engine::Engine()
 			}
 		}
 
-		cout << "速度 x y z : " << endl;
+		cout << "速度 (以空格分隔) : " << endl;
 		vector<double>velocity(MultidimensionalVector::dimension);
 		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
 			cin >> velocity[i];
