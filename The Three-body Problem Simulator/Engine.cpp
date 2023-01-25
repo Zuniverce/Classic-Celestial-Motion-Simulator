@@ -1,24 +1,25 @@
 ﻿#include "Engine.h"
 #include "Time.h"
 
+void Engine::setGravitationalConstant() {
+	cin >> GravitationalConstant;
+}
 Engine::Engine()
 {
 	int quantity = ZERO;
 	while (quantity == ZERO) {
-		cout << "天体个数: " << endl;
+		cout << "天体个数:" << endl;
 		cin >> quantity;
 	}
 	for (int i = ZERO; i < quantity; i++) {
 	again:
 		cout << endl << "设置天体 No." << i << endl;
 		CelestialBody initializer;
-
-		cout << "质量; " << endl;
+		cout << "质量: " << endl;
 		double mass;
 		cin >> mass;
 		initializer.setMass(mass);
-
-		cout << "坐标 (以空格分隔) : " << endl;
+		cout << "坐标 (以空格分隔): " << endl;
 		vector<double>coordinate(MultidimensionalVector::dimension);
 		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
 			cin >> coordinate[i];
@@ -33,8 +34,7 @@ Engine::Engine()
 				goto again;
 			}
 		}
-
-		cout << "速度 (以空格分隔) : " << endl;
+		cout << "速度 (以空格分隔): " << endl;
 		vector<double>velocity(MultidimensionalVector::dimension);
 		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
 			cin >> velocity[i];
@@ -42,5 +42,4 @@ Engine::Engine()
 		initializer.setVelocity(MultidimensionalVector(velocity));
 		star.push_back(initializer);
 	}
-	star[1].getPosition().print();
 }

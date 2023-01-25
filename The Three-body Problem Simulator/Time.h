@@ -1,15 +1,18 @@
 ﻿#pragma once
+#include "Global.h"
 class Time
 {
 public:
-	const static double DT;
+	const static inline double DT = 1; // 迭代间隔
 
-	const static int DAYTOHOUR;
-	const static int HOURTOMINUTE;
-	const static int MINUTETOSECOND;
+	const static inline double DAYTOHOUR = 12;
+	const static inline double HOURTOMINUTE = 60;
+	const static inline double MINUTETOSECOND = 60;
 
-	static int minute(int M = 1);
-	static int hour(int H = 1);
-	static int day(int D = 1);
+	static double minute(double M = 1);
+	static double hour(double H = 1);
+	static double day(double D = 1);
+
+	static inline double showInterval = DT; // 输出间隔
+	static void setShowInterval();
 };
-

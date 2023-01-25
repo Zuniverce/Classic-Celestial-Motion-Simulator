@@ -1,10 +1,15 @@
 ﻿#include "MultidimensionalVector.h"
 #include "Global.h"
+#include "Engine.h"
 
 void MultidimensionalVector::setDimension() {
 	while (dimension <= ZERO) {
 		cout << "维度: " << endl;
 		cin >> dimension;
+	}
+	if (dimension != THREE) {
+		cout << "引力常量: " << endl;
+		Engine::setGravitationalConstant();
 	}
 }
 MultidimensionalVector::MultidimensionalVector(void) {
@@ -29,7 +34,6 @@ MultidimensionalVector& MultidimensionalVector::setSpaceVector(const Multidimens
 	}
 	return *this;
 }
-
 MultidimensionalVector& MultidimensionalVector::operator=(const MultidimensionalVector& other) {
 	for (int i = ZERO; i < dimension; i++) {
 		this->coordinate[i] = other.coordinate[i];
@@ -70,7 +74,6 @@ MultidimensionalVector& MultidimensionalVector::operator+=(const Multidimensiona
 	}
 	return *this;
 }
-
 double MultidimensionalVector::getModulus(void) const {
 	return sqrt(this->getSquareModulus());
 }
@@ -82,12 +85,12 @@ double MultidimensionalVector::getSquareModulus(void) const {
 	return squareModulus;
 }
 void MultidimensionalVector::print(void) {
-	cout << "(";
-	cout << this->coordinate[ZERO];
+	fout << "(";
+	fout << this->coordinate[ZERO];
 	for (int i = ONE; i < dimension; i++) {
-		cout << ", " << this->coordinate[i];
+		fout << ", " << this->coordinate[i];
 	}
-	cout << ")" << endl;
+	fout << ")";
 }
 double MultidimensionalVector::getSquareModulus(const MultidimensionalVector& A, const MultidimensionalVector& B) {
 	return (A - B).getSquareModulus();
