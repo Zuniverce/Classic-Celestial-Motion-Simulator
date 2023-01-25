@@ -13,7 +13,7 @@ int Engine::run(const double& TimeLimit)
 			MultidimensionalVector F; // 由star[j]提供的力
 			MultidimensionalVector resultantForce; // 合力
 
-			for (int j = i + 1; j % CelestialBody::quantity != i; j++) // 循环下标防止溢出；
+			for (int j = i + ONE; j % CelestialBody::quantity != i; j++) // 循环下标防止溢出；
 			{
 				R = star[j % CelestialBody::quantity].getPosition()
 					- star[i].getPosition();
@@ -29,7 +29,7 @@ int Engine::run(const double& TimeLimit)
 		}
 		// 碰撞检测
 		for (int i = ZERO; i < CelestialBody::quantity; i++) {
-			for (int j = i + 1; j < CelestialBody::quantity; j++) {
+			for (int j = i + ONE; j < CelestialBody::quantity; j++) {
 				if (MultidimensionalVector::getSquareModulus(star[i].getPosition(), star[j].getPosition())
 					<= Engine::CrashJudgingSquareDistance) {
 					cout << "天体" << i << "天体" << j << "合并." << endl;

@@ -15,11 +15,11 @@ Engine::Engine()
 	again:
 		cout << endl << "设置天体 No." << i << endl;
 		CelestialBody initializer;
-		cout << "质量: " << endl;
+		cout << "质量 (kg):" << endl;
 		double mass;
 		cin >> mass;
 		initializer.setMass(mass);
-		cout << "坐标 (以空格分隔): " << endl;
+		cout << "坐标 (m)(以空格分隔):" << endl;
 		vector<double>coordinate(MultidimensionalVector::dimension);
 		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
 			cin >> coordinate[i];
@@ -34,7 +34,7 @@ Engine::Engine()
 				goto again;
 			}
 		}
-		cout << "速度 (以空格分隔): " << endl;
+		cout << "速度 (m/s)(以空格分隔):" << endl;
 		vector<double>velocity(MultidimensionalVector::dimension);
 		for (int i = ZERO; i < MultidimensionalVector::dimension; i++) {
 			cin >> velocity[i];
