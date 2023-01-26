@@ -5,12 +5,12 @@ int Engine::run(const double& TimeLimit)
 {
 
 	int timePercentCounter = ZERO;
+	MultidimensionalVector R; // 到star[j]的距离
+	MultidimensionalVector F; // 由star[j]提供的力
 	for (double presentTime = ZERO; presentTime < TimeLimit; presentTime += Time::DT)
 	{
 		for (int i = ZERO; i < CelestialBody::quantity; i++)
 		{
-			MultidimensionalVector R; // 到star[j]的距离
-			MultidimensionalVector F; // 由star[j]提供的力
 			MultidimensionalVector resultantForce; // 合力
 			for (int j = i + ONE; j % CelestialBody::quantity != i; j++) // 循环下标防止溢出；
 			{
@@ -38,6 +38,7 @@ int Engine::run(const double& TimeLimit)
 				}
 			}
 		}
+		// 写入文件
 		if (int(presentTime) % int(Time::showInterval) <= ONE) {
 			star[ZERO].getPosition().print();
 			for (int i = ONE; i < CelestialBody::quantity; i++) {
@@ -46,6 +47,7 @@ int Engine::run(const double& TimeLimit)
 			}
 			fout << endl;
 		}
+		// 显示进度
 		if (presentTime >= timePercentCounter * TimeLimit / ONEHUNDRED) {
 			int tens = timePercentCounter / 10;
 			int ones = timePercentCounter - tens * 10;
