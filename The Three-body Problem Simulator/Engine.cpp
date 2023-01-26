@@ -1,6 +1,5 @@
 ﻿#include "Engine.h"
 #include "Time.h"
-
 void Engine::setGravitationalConstant() {
 	cin >> GravitationalConstant;
 }
