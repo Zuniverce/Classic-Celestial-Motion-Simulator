@@ -43,7 +43,7 @@ MultidimensionalVector CelestialBody::getVelocity()const { return Multidimension
 MultidimensionalVector CelestialBody::getMomentum()const {
 	return this->velocity * this->mass;
 }
-CelestialBody& CelestialBody::operator+=(const CelestialBody& other) {
+CelestialBody CelestialBody::operator+=(const CelestialBody& other) {
 	// 将位置改为两星重心
 	this->position = (other.position - this->position)
 		* (other.mass / (this->mass + other.mass));

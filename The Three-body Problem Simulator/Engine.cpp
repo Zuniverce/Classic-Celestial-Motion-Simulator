@@ -3,19 +3,17 @@
 int Engine::run() {
 	int timePercentCounter = ZERO;
 	MultidimensionalVector R; // 到star[j]的距离
-	//MultidimensionalVector F; // 由star[j]提供的力
+	MultidimensionalVector F; // 由star[j]提供的力
 	for (double presentTime = ZERO; presentTime < Time::totalTime; presentTime += Time::DT) {
 		for (int i = ZERO; i < CelestialBody::quantity; i++) {
 			MultidimensionalVector resultantForce; // 合力
 			for (int j = i + ONE; j % CelestialBody::quantity != i; j++) { // 循环下标防止溢出
 				R = star[j % CelestialBody::quantity].getPosition()
 					- star[i].getPosition();
-				/*F.setSpaceVector(R, GravitationalConstant
+				F.setSpaceVector(R, GravitationalConstant
 					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass()
-						/ R.getSquareModulus()));*/
-				resultantForce += MultidimensionalVector(R, GravitationalConstant
-					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass()
-						/ R.getSquareModulus())); // 合力与当前受力合成
+						/ R.getSquareModulus()));
+				resultantForce += F; // 合力与当前受力合成
 			}
 			star[i].setForce(resultantForce);
 			star[i].setAcceleration(star[i].getForce() / star[i].getMass());

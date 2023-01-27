@@ -26,12 +26,12 @@ MultidimensionalVector::MultidimensionalVector(const vector<double>&origin) {
 		this->coordinate.push_back(origin[i]);
 	}
 }
-MultidimensionalVector::MultidimensionalVector(const MultidimensionalVector& origin, const double& modulus) {
+MultidimensionalVector& MultidimensionalVector::setSpaceVector(const MultidimensionalVector& origin, const double& modulus) {
 	MultidimensionalVector unitVector(origin.getUnitVector());
 	for (int i = ZERO; i < dimension; i++) {
 		this->coordinate[i] = (modulus * unitVector.coordinate[i]);
 	}
-	//return *this;
+	return *this;
 }
 MultidimensionalVector& MultidimensionalVector::operator=(const MultidimensionalVector& other) {
 	for (int i = ZERO; i < dimension; i++) {

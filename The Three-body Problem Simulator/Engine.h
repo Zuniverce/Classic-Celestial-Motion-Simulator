@@ -2,7 +2,9 @@
 #include "Global.h"
 #include "CelestialBody.h"
 #include "MultidimensionalVector.h"
-class Engine {
+
+class Engine
+{
 private:
 	vector<CelestialBody>star;
 	static inline double GravitationalConstant = 6.674e-11; // 引力常量
