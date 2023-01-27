@@ -136,7 +136,6 @@
     <ClCompile Include="CelestialBody.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Global.cpp" />
-    <ClCompile Include="Run.cpp" />
     <ClCompile Include="MultidimensionalVector.cpp" />
     <ClCompile Include="The Three-body Problem Simulator.cpp" />
     <ClCompile Include="Time.cpp" />

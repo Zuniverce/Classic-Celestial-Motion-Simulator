@@ -7,10 +7,10 @@ private:
 public:
     static inline int dimension = 0; // 维度
     static void setDimension(); // 设置维度
-    MultidimensionalVector(void); // 默认构造函数
-    MultidimensionalVector(const MultidimensionalVector& other); // 拷贝构造函数
-    MultidimensionalVector(const vector<double>&origin); // 初始化构造函数
-    MultidimensionalVector& setSpaceVector(const MultidimensionalVector& origin, const double& modulus); // 根据给定向量的方向和给定的模设置向量
+    explicit MultidimensionalVector(void); // 默认构造函数
+    explicit MultidimensionalVector(const MultidimensionalVector& other); // 拷贝构造函数
+    explicit MultidimensionalVector(const vector<double>&origin); // 初始化构造函数
+    explicit MultidimensionalVector(const MultidimensionalVector& origin, const double& modulus); // 根据给定向量的方向和给定的模构造向量
     MultidimensionalVector& operator=(const MultidimensionalVector& other); // 赋值运算符
     MultidimensionalVector operator*(const double& scalarMultiplier)const; // 向量乘标量
     MultidimensionalVector operator/(const double& scalarDivisor)const; // 向量除以标量

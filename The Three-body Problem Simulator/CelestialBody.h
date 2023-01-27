@@ -12,9 +12,9 @@ private:
 public:
 	static inline int quantity = ZERO; // 天体总数
 	// 构造函数
-	CelestialBody(void); // 空构造函数
-	CelestialBody(const CelestialBody& other); // 拷贝构造函数
-	CelestialBody(const double M, const MultidimensionalVector& P, const MultidimensionalVector& V); // 初始化构造函数
+	explicit CelestialBody(void); // 空构造函数
+	explicit CelestialBody(const CelestialBody& other); // 拷贝构造函数
+	explicit CelestialBody(const double M, const MultidimensionalVector& P, const MultidimensionalVector& V); // 初始化构造函数
 	~CelestialBody(void); // 构造函数
 
 	CelestialBody operator+=(const CelestialBody& other); // 运算符重载

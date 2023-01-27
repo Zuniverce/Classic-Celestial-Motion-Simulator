@@ -27,9 +27,6 @@
     <ClCompile Include="Engine.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Run.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Time.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
