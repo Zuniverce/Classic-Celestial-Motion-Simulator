@@ -13,6 +13,7 @@ int main()
 	//coutbackup = cout.rdbuf(fout.rdbuf()); //用 rdbuf() 重新定向，返回旧缓冲区指针
 	MultidimensionalVector::setDimension();
 	Time::setShowInterval();
+	Time::setTotalTime();
 	Engine instance;
 	instance.run();
 	system("pause");

@@ -16,5 +16,6 @@ public:
 	static inline double showInterval = DT; // 输出间隔
 	static void setShowInterval();
 
-	static inline double totalTime = 1000;
+	static inline double totalTime = 0;
+	static void setTotalTime();
 };
