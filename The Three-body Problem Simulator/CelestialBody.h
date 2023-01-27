@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "MultidimensionalVector.h"
-class CelestialBody // 天体类
-{
+#include "Global.h"
+class CelestialBody { // 天体类
 private:
 	double mass; // 质量
 	MultidimensionalVector position; // 坐标

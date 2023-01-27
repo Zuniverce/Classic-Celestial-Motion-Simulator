@@ -1,7 +1,6 @@
 ﻿#include "MultidimensionalVector.h"
 #include "Global.h"
 #include "Engine.h"
-
 void MultidimensionalVector::setDimension() {
 	while (dimension <= ZERO) {
 		cout << "维度: " << endl;

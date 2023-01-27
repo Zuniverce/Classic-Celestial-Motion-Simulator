@@ -1,5 +1,4 @@
-﻿#include "Global.h"
-#include "CelestialBody.h"
+﻿#include "CelestialBody.h"
 //构造函数
 CelestialBody::CelestialBody(void) {
 	this->mass = ZERO;
