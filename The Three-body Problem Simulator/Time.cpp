@@ -12,7 +12,8 @@ void Time::setShowInterval() {
     cout << "输出时间间隔 (s):" << endl;
     cin >> showInterval;
 }
+
 void Time::setTotalTime() {
-    cout << "模拟总时间 (s):" << endl;
+    cout << "模拟时长 (s):" << endl;
     cin >> totalTime;
 }
