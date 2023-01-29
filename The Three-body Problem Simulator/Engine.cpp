@@ -12,7 +12,7 @@ int Engine::run() {
 					- star[i].getPosition();
 				F.setSpaceVector(R, GravitationalConstant
 					* (star[i].getMass() * star[j % CelestialBody::quantity].getMass()
-						/ R.getSquareModulus()));
+						/ R.getInvolutionalModulus(MultidimensionalVector::dimension - ONE)));
 				resultantForce += F; // 合力与当前受力合成
 			}
 			star[i].setForce(resultantForce);

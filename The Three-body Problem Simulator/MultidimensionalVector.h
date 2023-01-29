@@ -25,6 +25,7 @@ public:
     
     double getModulus(void)const; // 向量的模
     double getSquareModulus(void)const; // 向量的模的平方
+    double getInvolutionalModulus(const double& involution)const; // 模的乘方
     MultidimensionalVector getUnitVector(void)const; // 向量对应的单位向量
     static double getSquareModulus(const MultidimensionalVector& A, const MultidimensionalVector& B); // 两个向量的差向量的模的平方
 
