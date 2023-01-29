@@ -21,7 +21,7 @@ MultidimensionalVector::MultidimensionalVector(const MultidimensionalVector& oth
 		this->coordinate.push_back(other.coordinate[i]);
 	}
 }
-MultidimensionalVector::MultidimensionalVector(const vector<double>&origin) {
+MultidimensionalVector::MultidimensionalVector(const vector<double>& origin) {
 	for (int i = ZERO; i < dimension; i++) {
 		this->coordinate.push_back(origin[i]);
 	}
@@ -93,6 +93,16 @@ void MultidimensionalVector::print(void) {
 }
 double MultidimensionalVector::getSquareModulus(const MultidimensionalVector& A, const MultidimensionalVector& B) {
 	return (A - B).getSquareModulus();
+}
+double MultidimensionalVector::getInvolutionalModulus(const double& involution) const
+{
+	double modulus = this->getModulus();
+	double InvolutionalModulus = ONE;
+	for (int i = ZERO; i < involution; i++)
+	{
+		InvolutionalModulus *= modulus;
+	}
+	return InvolutionalModulus;
 }
 MultidimensionalVector MultidimensionalVector::getUnitVector(void) const {
 	return *this / this->getModulus();
