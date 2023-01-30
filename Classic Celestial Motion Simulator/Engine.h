@@ -2,7 +2,6 @@
 #include "Global.h"
 #include "CelestialBody.h"
 #include "MultidimensionalVector.h"
-
 class Engine
 {
 private:
@@ -12,5 +11,8 @@ private:
 public:
 	explicit Engine(); // 构造函数
 	int run(); // 运行模块
-	static void setGravitationalConstant(); // 重设引力常量
+	bool collisionDetection();
+	void writeFile(); // 写入文件
+	void GravitationalFieldCalculate(const int& depth);
+	gravitational
 };
