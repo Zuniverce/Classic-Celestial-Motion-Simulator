@@ -13,12 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Interaction">
-      <UniqueIdentifier>{3f81ba90-afb2-4b83-8d96-6c254b74a389}</UniqueIdentifier>
+    <Filter Include="IO">
+      <UniqueIdentifier>{5c9a35dd-5ac4-42b5-bd77-5001b05e3df9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="The Three-body Problem Simulator.cpp">
+    <ClCompile Include="Classic Celestial Motion Simulator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CelestialBody.cpp">
@@ -27,10 +27,10 @@
     <ClCompile Include="Engine.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Time.cpp">
+    <ClCompile Include="Global.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Global.cpp">
+    <ClCompile Include="Time.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MultidimensionalVector.cpp">
@@ -38,28 +38,28 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Global.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="CelestialBody.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Engine.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Time.h">
+    <ClInclude Include="Global.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MultidimensionalVector.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="in.txt">
-      <Filter>Interaction</Filter>
+      <Filter>IO</Filter>
     </Text>
     <Text Include="out.txt">
-      <Filter>Interaction</Filter>
+      <Filter>IO</Filter>
     </Text>
   </ItemGroup>
 </Project>

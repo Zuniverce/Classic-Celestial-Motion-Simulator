@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bf7bbb58-b312-487b-b8ba-edf1df9c601d}</ProjectGuid>
-    <RootNamespace>TheThreebodyProblemSimulator</RootNamespace>
+    <ProjectGuid>{314c70dc-dcd7-4282-966d-9e940b81b2ec}</ProjectGuid>
+    <RootNamespace>ClassicCelestialMotionSimulator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -105,9 +105,6 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <Optimization>Disabled</Optimization>
-      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
-      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,7 +120,6 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,16 +130,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CelestialBody.cpp" />
+    <ClCompile Include="Classic Celestial Motion Simulator.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="MultidimensionalVector.cpp" />
-    <ClCompile Include="The Three-body Problem Simulator.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CelestialBody.h" />
-    <ClInclude Include="Global.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="Global.h" />
     <ClInclude Include="MultidimensionalVector.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
