@@ -1,2 +1,2 @@
-# The Three-body Problem Simulator.
+# Classic Celestial Motion Simulator.
 # Made by Visual Studio.
