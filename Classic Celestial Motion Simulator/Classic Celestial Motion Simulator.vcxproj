@@ -90,6 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,6 +121,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,6 +134,7 @@
     <ClCompile Include="CelestialBody.cpp" />
     <ClCompile Include="Classic Celestial Motion Simulator.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="FileOperator.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="MultidimensionalVector.cpp" />
     <ClCompile Include="Time.cpp" />
@@ -139,13 +142,10 @@
   <ItemGroup>
     <ClInclude Include="CelestialBody.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="FileOperator.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="MultidimensionalVector.h" />
     <ClInclude Include="Time.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="in.txt" />
-    <Text Include="out.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

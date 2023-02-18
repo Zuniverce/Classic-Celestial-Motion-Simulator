@@ -17,8 +17,4 @@ constexpr int ZERO = 0;
 constexpr int ONE = 1;
 constexpr int THREE = 3;
 
-extern const string FILENAME;
-extern streambuf* cinbackup;
-extern streambuf* coutbackup;
-extern ifstream fin; // 输入文件
-extern ofstream fout; //输出文件
+extern FileOperator fileOperatorInstance;

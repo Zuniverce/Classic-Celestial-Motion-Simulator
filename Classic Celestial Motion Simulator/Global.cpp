@@ -1,6 +1,3 @@
-#include "Global.h"
-streambuf* cinbackup;
-streambuf* coutbackup;
-ifstream fin; // ÊäÈëÎÄ¼ş
-ofstream fout; //Êä³öÎÄ¼ş
-const string FILENAME = "The Three-body Problem Simulator";
+ï»¿#include "Global.h"
+#include "FileOperator.h"
+FileOperator fileOperatorInstance;

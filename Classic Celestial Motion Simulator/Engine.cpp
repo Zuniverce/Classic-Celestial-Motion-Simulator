@@ -41,6 +41,7 @@ int Engine::run()
 	cout << "\b\b\b" << "done." << endl;
 	return ZERO;
 }
+
 bool Engine::collisionDetection() // 碰撞检测
 {
 	bool flag = false;
@@ -66,10 +67,10 @@ void Engine::writeFile() // 写入文件
 	star[ZERO].getPosition().print();
 	for (int i = ONE; i < CelestialBody::quantity; i++)
 	{
-		fout << ", ";
+		fileOperatorInstance.fout << ", ";
 		star[i].getPosition().print();
 	}
-	fout << endl;
+	fileOperatorInstance.fout << endl;
 }
 void Engine::GravitationalFieldCalculate(const int& depth)
 {
@@ -89,18 +90,14 @@ void Engine::GravitationalFieldCalculate(const int& depth)
 }
 Engine::Engine()
 {
-	while (MultidimensionalVector::dimension <= ZERO)
-	{
-		cout << "维度: " << endl;
-		cin >> MultidimensionalVector::dimension;
-	}
 	if (MultidimensionalVector::dimension != THREE)
 	{
 		cout << "引力常量: " << endl;
 		cin >> GravitationalConstant;
+		// 允许是负数
 	}
 	int quantity = ZERO;
-	while (quantity == ZERO)
+	while (quantity <= ZERO)
 	{
 		cout << "天体个数:" << endl;
 		cin >> quantity;

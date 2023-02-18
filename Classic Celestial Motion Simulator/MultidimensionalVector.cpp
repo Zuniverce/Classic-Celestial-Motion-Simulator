@@ -6,10 +6,6 @@ void MultidimensionalVector::setDimension() {
 		cout << "维度: " << endl;
 		cin >> dimension;
 	}
-	if (dimension != THREE) {
-		cout << "引力常量: " << endl;
-		Engine::setGravitationalConstant();
-	}
 }
 MultidimensionalVector::MultidimensionalVector(void) {
 	for (int i = ZERO; i < dimension; i++) {
@@ -84,12 +80,12 @@ double MultidimensionalVector::getSquareModulus(void) const {
 	return squareModulus;
 }
 void MultidimensionalVector::print(void) {
-	fout << "(";
-	fout << this->coordinate[ZERO];
+	fileOperatorInstance.fout << "(";
+	fileOperatorInstance.fout << this->coordinate[ZERO];
 	for (int i = ONE; i < dimension; i++) {
-		fout << ", " << this->coordinate[i];
+		fileOperatorInstance.fout << ", " << this->coordinate[i];
 	}
-	fout << ")";
+	fileOperatorInstance.fout << ")";
 }
 double MultidimensionalVector::getSquareModulus(const MultidimensionalVector& A, const MultidimensionalVector& B) {
 	return (A - B).getSquareModulus();

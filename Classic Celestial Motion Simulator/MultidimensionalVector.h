@@ -19,8 +19,7 @@ public:
     MultidimensionalVector operator/(const double& scalarDivisor)const; // 向量除以标量
     MultidimensionalVector operator+(const MultidimensionalVector& vectorAddend)const; // 向量加法
     MultidimensionalVector operator-(const MultidimensionalVector& vectorSubtrahend)const; // 向量减法
-    //MultidimensionalVector operator/(const MultidimensionalVector& vectorDivisor)const; // 向量除法
-    MultidimensionalVector& operator+=(const MultidimensionalVector& vectorAddend);
+    MultidimensionalVector& operator+=(const MultidimensionalVector& vectorAddend); //向量累加
     
     double getModulus(void)const; // 向量的模
     double getSquareModulus(void)const; // 向量的模的平方
@@ -28,5 +27,6 @@ public:
     MultidimensionalVector getUnitVector(void)const; // 向量对应的单位向量
     static double getSquareModulus(const MultidimensionalVector& A, const MultidimensionalVector& B); // 两个向量的差向量的模的平方
 
+    static void setDimension(); //初始化维度
     void print(void); // 打印\n
 };

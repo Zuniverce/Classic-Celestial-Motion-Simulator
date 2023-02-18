@@ -54,12 +54,4 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="in.txt">
-      <Filter>IO</Filter>
-    </Text>
-    <Text Include="out.txt">
-      <Filter>IO</Filter>
-    </Text>
-  </ItemGroup>
 </Project>

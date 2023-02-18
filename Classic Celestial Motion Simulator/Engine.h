@@ -14,5 +14,5 @@ public:
 	bool collisionDetection();
 	void writeFile(); // 写入文件
 	void GravitationalFieldCalculate(const int& depth);
-	gravitational
+	//gravitational
 };
