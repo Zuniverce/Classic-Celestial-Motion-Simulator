@@ -16,5 +16,6 @@ constexpr int ONEHUNDRED = 100;
 constexpr int ZERO = 0;
 constexpr int ONE = 1;
 constexpr int THREE = 3;
+constexpr int TWO = 2;
 
 extern FileOperator fileOperatorInstance;

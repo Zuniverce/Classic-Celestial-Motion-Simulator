@@ -74,10 +74,23 @@ void Engine::writeFile() // 写入文件
 }
 void Engine::GravitationalFieldCalculate(const int& depth)
 {
-	int lim = 0;//随便写的用来过语法
+	if (MultidimensionalVector::dimension != THREE) {
+		cout << "只能对三维空间重力场进行求解.";
+		return;
+	}
+	double limit[THREE][TWO]{};
+	for (int i = ZERO; i < THREE; i++) {
+		cout << char('x' + i) << "轴界限(m):" << endl;
+		cout << "left:" << endl;
+		cin >> limit[i][ZERO];
+		cout << "right:" << endl;
+		cin >> limit[i][ONE];
+		cout << endl;
+	}
+	vector<MultidimensionalVector>field[THREE]{};
 	if (depth != ZERO)
 	{
-		for (int i = ZERO; i < lim; i++)
+		for (int i = limit[i][ZERO]; i < limit[i][ONE]; i++)
 		{
 			GravitationalFieldCalculate(depth - ONE);
 		}
