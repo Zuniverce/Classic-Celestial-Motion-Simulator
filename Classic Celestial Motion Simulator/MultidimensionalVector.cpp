@@ -1,16 +1,6 @@
 ﻿#include "MultidimensionalVector.h"
 #include "Global.h"
 #include "Engine.h"
-void MultidimensionalVector::setDimension() {
-	while (dimension <= ZERO) {
-		cout << "维度: " << endl;
-		cin >> dimension;
-	}
-	if (dimension != THREE) {
-		cout << "引力常量: " << endl;
-		Engine::setGravitationalConstant();
-	}
-}
 MultidimensionalVector::MultidimensionalVector(void) {
 	for (int i = ZERO; i < dimension; i++) {
 		this->coordinate.push_back(ZERO);

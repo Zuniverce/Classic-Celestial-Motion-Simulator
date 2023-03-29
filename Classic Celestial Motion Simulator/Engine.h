@@ -13,6 +13,6 @@ public:
 	int run(); // 运行模块
 	bool collisionDetection();
 	void writeFile(); // 写入文件
-	void GravitationalFieldCalculate(const int& depth);
-	gravitational
+	//void GravitationalFieldCalculate(const int& depth);
+	//TODO: gravitational
 };

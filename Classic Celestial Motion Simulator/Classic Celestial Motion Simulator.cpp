@@ -11,7 +11,7 @@ int main()
 	fout.open("IO/out.txt"); //输出文件
 	//cinbackup = cin.rdbuf(fin.rdbuf()); //用 rdbuf() 重新定向，返回旧缓冲区指针
 	//coutbackup = cout.rdbuf(fout.rdbuf()); //用 rdbuf() 重新定向，返回旧缓冲区指针
-	MultidimensionalVector::setDimension();
+	//MultidimensionalVector::setDimension();
 	Time::setShowInterval();
 	Time::setTotalTime();
 	Engine instance;

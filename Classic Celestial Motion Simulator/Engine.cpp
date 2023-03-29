@@ -71,22 +71,7 @@ void Engine::writeFile() // 写入文件
 	}
 	fout << endl;
 }
-void Engine::GravitationalFieldCalculate(const int& depth)
-{
-	int lim = 0;//随便写的用来过语法
-	if (depth != ZERO)
-	{
-		for (int i = ZERO; i < lim; i++)
-		{
-			GravitationalFieldCalculate(depth - ONE);
-		}
-	}
-	else
-	{
 
-	}
-
-}
 Engine::Engine()
 {
 	while (MultidimensionalVector::dimension <= ZERO)
